@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background-primary: #ffffff;
+    --background-secondary: #f5f5f5;
+    --text-primary: #171717;
+    --text-secondary: #4b5563;
+  }
+
+  .dark {
+    --background-primary: #171717;
+    --background-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+  }
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+body {
+  @apply bg-primary text-primary;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Özel scrollbar stilleri */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full hover:bg-opacity-80;
+}
