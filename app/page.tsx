@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   // Burada teknolojileri değiştirebilirsiniz
-  const technologies = ['HTML/CSS', 'JavaScript', 'React', 'Node.js'];
+  const technologies = ['React.js', 'Next.js', 'React Native', 'TypeScript',' Node.js Express.js', 'PHP', 'Bootstrap', 'HTML5/CSS3', 'RESTful API', 'MySQL', 'Postgresql' ];
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -96,13 +96,13 @@ export default function Home() {
           >
             <Link
               href="/projects"
-              className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+              className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]"
             >
               Projelerimi Gör
             </Link>
             <Link
               href="/contact"
-              className="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
+              className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]"
             >
               İletişime Geç
             </Link>
