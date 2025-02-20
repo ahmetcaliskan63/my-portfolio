@@ -38,10 +38,10 @@ export const cardVariants = {
     },
   },
   hover: {
-    y: -8,
+    y: -5,
     scale: 1.02,
     transition: {
-      duration: 0.2,
+      duration: 0.3,
       ease: "easeInOut",
     },
   },
@@ -56,7 +56,6 @@ export const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.3,
     },
   },
 };

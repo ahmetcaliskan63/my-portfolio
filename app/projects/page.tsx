@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { containerVariants, cardVariants } from '../utils/animations';
 
 // Proje verilerini burada tanımlıyoruz
 const projects = [
@@ -12,13 +11,7 @@ const projects = [
     image: '/project1.jpg',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     githubUrl: 'https://github.com/username/e-commerce',
-    liveUrl: 'https://example.com',
-    features: [
-      'Kullanıcı kimlik doğrulama',
-      'Ödeme entegrasyonu',
-      'Ürün filtreleme',
-      'Sepet yönetimi'
-    ]
+    liveUrl: 'https://example.com'
   },
   {
     title: 'Task Yönetim Uygulaması',
@@ -26,13 +19,7 @@ const projects = [
     image: '/project2.jpg',
     technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
     githubUrl: 'https://github.com/username/task-manager',
-    liveUrl: 'https://example.com',
-    features: [
-      'Gerçek zamanlı güncelleme',
-      'Drag-and-drop',
-      'Ekip yönetimi',
-      'İlerleme takibi'
-    ]
+    liveUrl: 'https://example.com'
   },
   {
     title: 'Blog Platformu',
@@ -40,155 +27,86 @@ const projects = [
     image: '/project3.jpg',
     technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'Vercel'],
     githubUrl: 'https://github.com/username/blog-platform',
-    liveUrl: 'https://example.com',
-    features: [
-      'Markdown desteği',
-      'SEO optimizasyonu',
-      'Yorum sistemi',
-      'Sosyal medya paylaşımı'
-    ]
-  },
-  // Daha fazla proje ekleyebilirsiniz
+    liveUrl: 'https://example.com'
+  }
 ];
 
 export default function Projects() {
   return (
-    <div className="py-12">
-      {/* Başlık */}
-      <motion.div
-        variants={cardVariants}
-        initial="initial"
-        animate="animate"
-        className="text-center mb-12"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 -z-10" />
+      
+      <div className="container mx-auto px-4 py-12">
+        <motion.h1 
+          className="text-4xl md:text-6xl font-bold mb-8 text-center bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           Projelerim
-        </h1>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          Modern web teknolojileri kullanarak geliştirdiğim projeler.
-          Her projede kullanıcı deneyimini ve performansı ön planda tutuyorum.
-        </p>
-      </motion.div>
-
-      {/* Projeler Grid */}
-      <motion.div
-        variants={containerVariants}
-        initial="initial"
-        animate="animate"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            variants={cardVariants}
-            whileHover="hover"
-            className="bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-          >
-            {/* Proje Resmi */}
-            <div className="relative h-48 overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/90 z-10" />
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              {/* Teknoloji Etiketleri */}
-              <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <motion.span
-                    key={tech}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: index * 0.1
-                    }}
-                    className="px-2 py-1 text-xs rounded-full bg-primary/20 text-primary backdrop-blur-sm"
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
+        </motion.h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-gray-800/50 rounded-lg overflow-hidden border border-gray-700"
+            >
+              <div className="relative h-48">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
 
-            {/* Proje Detayları */}
-            <div className="p-6">
-              <motion.h3
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl font-semibold mb-2 text-white"
-              >
-                {project.title}
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="text-gray-400 mb-4 line-clamp-2"
-              >
-                {project.description}
-              </motion.p>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  {project.description}
+                </p>
 
-              {/* Özellik Listesi */}
-              <motion.ul
-                initial="initial"
-                animate="animate"
-                variants={containerVariants}
-                className="mb-6 space-y-2"
-              >
-                {project.features.map((feature, i) => (
-                  <motion.li
-                    key={i}
-                    variants={cardVariants}
-                    className="text-sm text-gray-400 flex items-center"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs rounded-full bg-primary/20 text-primary"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {feature}
-                  </motion.li>
-                ))}
-              </motion.ul>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Butonlar */}
-              <div className="flex gap-4">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
-                >
-                  GitHub
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  Canlı Demo
-                </motion.a>
+                <div className="flex gap-4">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
+                  >
+                    Canlı Demo
+                  </a>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 } 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   // Burada teknolojileri değiştirebilirsiniz
-  const technologies = ['React.js', 'Next.js', 'React Native', 'TypeScript',' Node.js Express.js', 'PHP', 'Bootstrap', 'HTML5/CSS3', 'RESTful API', 'MySQL', 'Postgresql' ];
+  const technologies = ['React Native', 'JavaScript', 'Node.js Express.js', 'Next.js','TypeScript'];
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -94,18 +94,22 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <Link
-              href="/projects"
-              className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]"
-            >
-              Projelerimi Gör
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]"
-            >
-              İletişime Geç
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/projects"
+                className="cursor-pointer bg-[#1a1a1a] text-white px-8 py-3 rounded-lg transition-all duration-300 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50"
+              >
+                Projelerimi Gör
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/contact"
+                className="cursor-pointer bg-[#1a1a1a] text-white px-8 py-3 rounded-lg transition-all duration-300 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50"
+              >
+                İletişime Geç
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
 
