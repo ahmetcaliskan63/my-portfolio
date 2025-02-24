@@ -2,29 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background-primary: #ffffff;
-    --background-secondary: #f5f5f5;
-    --text-primary: #171717;
-    --text-secondary: #4b5563;
-  }
-
-  .dark {
-    --background-primary: #171717;
-    --background-secondary: #2d2d2d;
-    --text-primary: #ffffff;
-    --text-secondary: #9ca3af;
-  }
-}
-
-* {
-  @apply transition-colors duration-200;
+:root {
+  --primary: #3b82f6;
 }
 
 body {
-  @apply bg-primary text-primary;
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-900 text-white;
 }
 
 /* Özel scrollbar stilleri */

@@ -65,7 +65,7 @@ const Header = () => {
             href="/" 
             className="text-2xl font-bold text-gray-800 dark:text-white hover:text-primary transition-colors"
           >
-            Portfolio
+            AhmetCALİSKAN
           </Link>
 
           {/* Desktop Navigation */}
@@ -83,13 +83,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? '🌞' : '🌙'}
-            </button>
+
           </div>
 
           {/* Mobile Navigation Button */}
@@ -131,12 +125,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="w-full text-left p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >
-              {isDark ? 'Açık Tema' : 'Koyu Tema'}
-            </button>
+
           </div>
         </div>
       </nav>

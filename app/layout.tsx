@@ -1,12 +1,14 @@
+// my-portfolio/app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import AnimatedLayout from './components/AnimatedLayout';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Kişisel portfolyo websitesi',
+  title: 'Ahmet Çalışkan - Portfolio',
+  description: 'Frontend Developer Portfolio',
 };
 
 export default function RootLayout({
@@ -15,13 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
-      <body className="flex flex-col min-h-screen">
+    <html lang="en" className="dark">
+      <body className={inter.className}>
         <Header />
-        <main className="flex-grow container mx-auto px-4 pt-24 pb-12">
-          <AnimatedLayout>{children}</AnimatedLayout>
+        <main className="min-h-screen bg-gray-900">
+          {children}
         </main>
-        <Footer />
       </body>
     </html>
   );
