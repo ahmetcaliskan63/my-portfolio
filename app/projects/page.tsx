@@ -9,7 +9,7 @@ import Link from 'next/link';
 const projects = [
   {
     title: 'Social Campus',
-    description: 'Social Campus, Kırklareli Üniversitesi öğrencilerinin kampüs yaşamını kolaylaştıran ve zenginleştiren; yemek menüsü görüntüleme, öğrenci kulüplerine katılma, kampüs gündemi hakkında sohbet etme ve ikinci el eşya satışı gibi özellikler sunan, React Native ile geliştirilmiş ve güçlü bir Node.js & MySQL altyapısına sahip bir mobil uygulamadır.',
+    description: 'Social Campus, Kırklareli Üniversitesi öğrencilerinin kampüs yaşamını kolaylaştıran ve zenginleştiren; yemek menüsü görüntüleme, öğrenci kulüplerine katılma, kampüs gündemi hakkında sohbet etme ve ikinci el eşya satışı gibi özellikler sunar.',
     image: '/resimler/kluCampus/klu1.png',
     technologies: ['React native', 'Node.js', 'Express.js', 'mySQL'],
     githubUrl: 'https://github.com/ahmetcaliskan63/SOCIALCAMPUS1',
@@ -54,67 +54,61 @@ export default function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            
-            <Link key={project.title} href={project.detailUrl}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 shadow-lg transition-transform transform hover:scale-105 h-full flex flex-col"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 text-xs rounded-full bg-primary/20 text-primary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+            <div key={project.title} className="flex flex-col">
+              <Link href={project.detailUrl}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 shadow-lg transition-transform transform hover:scale-105 h-full flex flex-col"
+                >
+                  <div className="relative h-64">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
 
-                  <div className="flex gap-4 mt-auto">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
-                    >
-                      
-                      GitHub
-                    </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
-                    >
-                      Canlı Demo
-                    </a>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 flex-grow">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs rounded-full bg-primary/20 text-primary"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-              
-            </Link>
-            
+                </motion.div>
+              </Link>
+
+              <div className="flex gap-4 mt-4">
+                <button
+                  onClick={() => window.open(project.githubUrl, '_blank')}
+                  className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
+                >
+                  GitHub
+                </button>
+                <button
+                  onClick={() => window.open(project.liveUrl, '_blank')}
+                  className="flex-1 text-center py-2 rounded-lg bg-[#1a1a1a] text-white border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50 transition-all duration-300"
+                >
+                  Canlı Demo
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>

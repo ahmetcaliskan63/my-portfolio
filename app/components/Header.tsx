@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -31,17 +31,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-      setIsDark(true);
-    }
-  };
 
   const navItems = [
     { name: 'Ana Sayfa', path: '/' },
@@ -65,7 +54,7 @@ const Header = () => {
             href="/" 
             className="text-2xl font-bold text-gray-800 dark:text-white hover:text-primary transition-colors"
           >
-            AhmetCALİSKAN
+            Ahmet
           </Link>
 
           {/* Desktop Navigation */}
