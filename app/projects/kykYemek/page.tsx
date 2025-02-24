@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 
@@ -22,29 +23,26 @@ export default function KykYemekDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-24 pb-12">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-500 to-blue-500 text-transparent bg-clip-text">
-            KYK Yemek Menüsü
-          </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            KYK yurtlarında kalan öğrenciler için geliştirilmiş modern menü uygulaması
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pb-12">
+      <div className="container mx-auto px-4 pt-16">
+        {/* Geri Dön Butonu */}
+        <div className="mb-6">
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-lg"
+          >
+            <FiArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span className="font-medium">Projelere Dön</span>
+          </Link>
+        </div>
 
-        {/* Görsel Slider - Aynı yapı */}
+        {/* Görsel Slider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative max-w-5xl mx-auto mb-16 group"
+          className="relative max-w-4xl mx-auto mb-12 group"
         >
-          {/* ... slider kodu KluCampus ile aynı ... */}
-          <div className="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl">
             <Image
               src={images[currentImageIndex]}
               alt={`Screenshot ${currentImageIndex + 1}`}
@@ -55,6 +53,7 @@ export default function KykYemekDetail() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
 
+          {/* Navigation Arrows */}
           <button
             onClick={prevImage}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
@@ -68,13 +67,14 @@ export default function KykYemekDetail() {
             <FiArrowRight size={24} />
           </button>
 
-          <div className="flex justify-center gap-4 mt-6 overflow-x-auto pb-4">
+          {/* Thumbnail Navigation */}
+          <div className="flex justify-center gap-3 mt-4 overflow-x-auto pb-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-20 h-20 relative rounded-lg overflow-hidden transition-all ${
-                  index === currentImageIndex ? 'ring-2 ring-green-500 scale-110' : 'opacity-50 hover:opacity-100'
+                className={`w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0 transition-all ${
+                  index === currentImageIndex ? 'ring-2 ring-blue-500 scale-110' : 'opacity-50 hover:opacity-100'
                 }`}
               >
                 <Image
@@ -88,49 +88,54 @@ export default function KykYemekDetail() {
           </div>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12"
-          >
+        {/* Proje Detayları */}
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
+            <p className="text-gray-300 leading-relaxed">
+              KYK yurtlarında kalan öğrenciler için geliştirilmiş, günlük ve haftalık yemek & kahvaltı menülerini gösteren, besin değerleri hakkında bilgi veren modern bir web uygulaması.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-green-400">Proje Özellikleri</h2>
+              <h2 className="text-2xl font-bold mb-6 text-blue-400">Proje Özellikleri</h2>
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500">•</span>
-                  Günlük yemek ve kahvaltı menüleri
+                  <span className="text-blue-500">•</span>
+                  Günlük yemek menüsü görüntüleme
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500">•</span>
-                  Haftalık menü planı görüntüleme
+                  <span className="text-blue-500">•</span>
+                  Haftalık menü planlama
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500">•</span>
+                  <span className="text-blue-500">•</span>
                   Besin değeri bilgileri
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500">•</span>
-                  Menü değerlendirme sistemi
+                  <span className="text-blue-500">•</span>
+                  Responsive tasarım
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-bold mb-6 text-green-400">Teknolojiler</h2>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-green-500/10 text-green-400 rounded-full">React.js</span>
-                <span className="px-4 py-2 bg-green-500/10 text-green-400 rounded-full">Node.js</span>
-                <span className="px-4 py-2 bg-green-500/10 text-green-400 rounded-full">MongoDB</span>
-                <span className="px-4 py-2 bg-green-500/10 text-green-400 rounded-full">Tailwind CSS</span>
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Node.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Express.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">MongoDB</span>
+                </div>
               </div>
 
-              <div className="mt-8">
-                <h2 className="text-2xl font-bold mb-6 text-green-400">Bağlantılar</h2>
-                <div className="flex gap-4">
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
+                <div className="flex flex-col gap-4">
                   <a
-                    href="https://github.com/yourusername/kyk-menu"
+                    href="https://github.com/yourusername/kyk-yemek"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
@@ -142,7 +147,7 @@ export default function KykYemekDetail() {
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
                   >
                     <FiExternalLink size={20} />
                     <span>Canlı Demo</span>
@@ -150,7 +155,7 @@ export default function KykYemekDetail() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

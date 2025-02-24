@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 
@@ -29,44 +31,37 @@ export default function KluCampusDetail() {
 
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
+ };
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-24 pb-12">
-      <div className="container mx-auto px-4">
-        {/* Başlık Bölümü */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-            Social Campus
-          </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Kırklareli Üniversitesi öğrencileri için geliştirilmiş kapsamlı mobil platform
-          </p>
-        </motion.div>
-
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pb-12">
+      <div className="container mx-auto px-4 pt-16">
+        {/* Geri Dön Butonu */}
+        <div className="mb-6">
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-lg"
+          >
+            <FiArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span className="font-medium">Projelere Dön</span>
+          </Link>
+        </div>
+  
         {/* Görsel Slider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative max-w-5xl mx-auto mb-16 group"
+          className="relative max-w-4xl mx-auto mb-12 group"
         >
-          <div className="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl">
             <Image
               src={images[currentImageIndex]}
               alt={`Screenshot ${currentImageIndex + 1}`}
               fill
               className="object-contain"
-              priority
-            />
-            
-            {/* Gradient Overlay */}
+              priority />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
-
+  
           {/* Navigation Arrows */}
           <button
             onClick={prevImage}
@@ -80,14 +75,14 @@ export default function KluCampusDetail() {
           >
             <FiArrowRight size={24} />
           </button>
-
+  
           {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-4 mt-6">
+          <div className="flex justify-center gap-3 mt-4 overflow-x-auto pb-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-20 h-20 relative rounded-lg overflow-hidden transition-all ${
+                className={`w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0 transition-all ${
                   index === currentImageIndex ? 'ring-2 ring-blue-500 scale-110' : 'opacity-50 hover:opacity-100'
                 }`}
               >
@@ -102,14 +97,16 @@ export default function KluCampusDetail() {
           </div>
         </motion.div>
 
-        {/* Proje Detayları */}
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12"
-          >
+  {/* Proje Detayları */}
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Social Campus, Kırklareli Üniversitesi öğrencilerinin kampüs yaşamını kolaylaştırmak ve zenginleştirmek için tasarlanmış bir mobil uygulamadır. Şu anda test aşamasında olan uygulama, öğrencilerin günlük yemek menüsünü görüntülemesine, öğrenci kulüplerine katılmasına, kampüs gündemi hakkında sohbet etmesine ve kullanmadıkları eşyaları satışa çıkarmasına olanak tanır. React Native ile geliştirilen uygulama, Node.js backend ve MySQL veritabanı ile güçlü bir altyapıya sahiptir.
+            </p>
+          </div>
+  
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-bold mb-6 text-blue-400">Proje Özellikleri</h2>
               <ul className="space-y-4 text-gray-300">
@@ -131,19 +128,21 @@ export default function KluCampusDetail() {
                 </li>
               </ul>
             </div>
-
-            <div>
-              <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React Native</span>
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Node.js</span>
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Express.js</span>
-                <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">MySQL</span>
+  
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React Native</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Node.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Express.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">MySQL</span>
+                </div>
               </div>
-
-              <div className="mt-8">
+  
+              <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
-                <div className="flex gap-4">
+                <div className="flex flex-col gap-4">
                   <a
                     href="https://github.com/ahmetcaliskan63/SOCIALCAMPUS1"
                     target="_blank"
@@ -165,9 +164,9 @@ export default function KluCampusDetail() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }

@@ -39,12 +39,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-16">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 -z-10" />
       
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-8 md:px-12 lg:px-16 max-w-7xl">
         <motion.h1 
-          className="text-4xl md:text-6xl font-bold mb-8 text-center bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
+          className="text-3xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -52,17 +52,17 @@ export default function Projects() {
           Projelerim
         </motion.h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {projects.map((project, index) => (
-            <div key={project.title} className="flex flex-col">
-              <Link href={project.detailUrl}>
+            <div key={project.title} className="flex flex-col h-full">
+              <Link href={project.detailUrl} className="flex-1 block">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 shadow-lg transition-transform transform hover:scale-105 h-full flex flex-col"
+                  className="bg-gray-800/80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 shadow-lg transition-transform transform hover:scale-105 h-full"
                 >
-                  <div className="relative h-64">
+                  <div className="relative h-48 md:h-56">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -72,15 +72,15 @@ export default function Projects() {
                     />
                   </div>
 
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold mb-2 text-white">
+                  <div className="p-5 md:p-6 flex flex-col h-full">
+                    <h3 className="text-lg md:text-xl font-semibold mb-3 text-white">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 flex-grow">
+                    <p className="text-sm md:text-base text-gray-400 mb-4 line-clamp-3">
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mt-auto">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
