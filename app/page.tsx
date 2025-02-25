@@ -24,7 +24,7 @@ export default function Home() {
     e.preventDefault();
     console.log('CV İndir butonuna tıklandı');
     const link = document.createElement('a');
-    link.href = '/path/to/your/cv.pdf'; // CV dosyanızın yolu
+    link.href = 'Ahmet_Calisan.pdf'; // CV dosyanızın yolu
     link.download = 'Ahmet_Caliskan_CV.pdf'; // İndirilecek dosya adı
     document.body.appendChild(link);
     link.click();
@@ -96,7 +96,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <h2 className="text-2xl md:text-3xl text-primary mb-6">
-              Frontend Developer
+            FullStack Developer
             </h2>
           </motion.div>
           
@@ -196,7 +196,7 @@ export default function Home() {
             <div className="flex justify-center gap-4 absolute bottom-[-60px] left-1/2 transform -translate-x-1/2">
               {/* GitHub İkonu */}
               <a
-                href="https://github.com/your-github-username"
+                href="https://github.com/ahmetcaliskan63/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 text-gray-300 hover:text-white transition-colors"
@@ -213,7 +213,7 @@ export default function Home() {
 
               {/* LinkedIn İkonu */}
               <a
-                href="https://www.linkedin.com/in/your-linkedin-username"
+                href="https://www.linkedin.com/in/ahmetcaliskann/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 text-gray-300 hover:text-white transition-colors"
@@ -230,7 +230,7 @@ export default function Home() {
 
               {/* Mail İkonu */}
               <a
-                href="mailto:your-email@example.com"
+                href="mailto:caliskanahmmet@gmail.com"
                 className="h-10 w-10 text-gray-300 hover:text-white transition-colors"
               >
                 <svg
@@ -251,7 +251,7 @@ export default function Home() {
 
               {/* LeetCode İkonu */}
               <a
-                href="https://leetcode.com/your-username"
+                href="https://leetcode.com/u/ahmet_63/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 text-gray-300 hover:text-white transition-colors"

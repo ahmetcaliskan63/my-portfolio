@@ -49,12 +49,12 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link 
-            href="/" 
-            className="text-2xl font-bold text-gray-800 dark:text-white hover:text-primary transition-colors"
-          >
-            Ahmet
-          </Link>
+        <Link 
+        href="/" 
+        className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-300"
+      >
+        Ahmet
+      </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
