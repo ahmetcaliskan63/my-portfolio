@@ -134,8 +134,8 @@ export default function KykYemekDetail() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
                 <div className="flex flex-col gap-4">
-                  <a
-                    href="https://github.com/yourusername/kyk-yemek"
+                <a
+                    href="https://github.com/ahmetcaliskan63/SOCIALCAMPUS1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
