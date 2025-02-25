@@ -62,11 +62,11 @@ export default function About() {
               Yazılım Mühendisliği
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed">
-            Merhaba! Ben, Ahmet Çalışkan, Kırklareli Üniversitesi'nde Yazılım Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme alanında kendimi sürekli geliştiriyor, özellikle web ve mobil uygulama geliştirme konularına yoğunlaşıyorum. Etkileşimli ve ölçeklenebilir projeler üretmeye büyük ilgi duyuyorum.
+            Merhaba! Ben, Ahmet Çalışkan, Kırklareli Üniversitesinde Yazılım Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme alanında kendimi sürekli geliştiriyor, özellikle web ve mobil uygulama geliştirme konularına yoğunlaşıyorum. Etkileşimli ve ölçeklenebilir projeler üretmeye büyük ilgi duyuyorum.
 
-React, React Native ve modern web teknolojileriyle çalışarak hem web hem de mobil platformlarda yenilikçi projeler geliştiriyorum. Çözüm odaklı yaklaşımım sayesinde, kullanıcı deneyimini ön planda tutan ve performansı yüksek uygulamalar geliştirmeye odaklanıyorum. Şu anda Kırklareli Üniversitesi'nde yazılım geliştirme alanında çalışıyor ve farklı projelerde aktif olarak yer alıyorum. Bu süreç, yalnızca teknik becerilerimi geliştirmekle kalmayıp, aynı zamanda yazılım projelerinin her aşamasında karar verme, optimizasyon ve proje yönetimi becerilerimi de güçlendirmemi sağlıyor.
+React, React Native ve modern web teknolojileriyle çalışarak hem web hem de mobil platformlarda yenilikçi projeler geliştiriyorum. Çözüm odaklı yaklaşımım sayesinde, kullanıcı deneyimini ön planda tutan ve performansı yüksek uygulamalar geliştirmeye odaklanıyorum. Şu anda Kırklareli Üniversitesinde yazılım geliştirme alanında çalışıyor ve farklı projelerde aktif olarak yer alıyorum. Bu süreç, yalnızca teknik becerilerimi geliştirmekle kalmayıp, aynı zamanda yazılım projelerinin her aşamasında karar verme, optimizasyon ve proje yönetimi becerilerimi de güçlendirmemi sağlıyor.
 
-Üniversite hayatım boyunca Google Developer Student Clubs (GDSC) ve Women Techmakers (WTM) gibi uluslararası teknoloji topluluklarında aktif rol aldım. Şu an Kırklareli Üniversitesi Data Science ve Yapay Zeka Kulübü'nün başkan yardımcısı olarak, veri bilimi ve yapay zeka projelerinde çalışıyor ve teknik etkinlikler düzenleyerek bilgi paylaşımına katkıda bulunuyorum.
+Üniversite hayatım boyunca Google Developer Student Clubs (GDSC) ve Women Techmakers (WTM) gibi uluslararası teknoloji topluluklarında aktif rol aldım. Şu an Kırklareli Üniversitesi Data Science ve Yapay Zeka Kulübünün başkan yardımcısı olarak, veri bilimi ve yapay zeka projelerinde çalışıyor ve teknik etkinlikler düzenleyerek bilgi paylaşımına katkıda bulunuyorum.
             </p>
           </section>
 
