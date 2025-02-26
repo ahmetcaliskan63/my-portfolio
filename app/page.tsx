@@ -106,9 +106,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            3 yıllık frontend geliştirme deneyimine sahibim. Modern web teknolojileri
-            ve kullanıcı deneyimi konularında uzmanım. Responsive tasarım ve
-            performans optimizasyonu konularında başarılı projeler geliştirdim.
+Modern web ve mobil teknolojileri kullanarak kullanıcı odaklı, yüksek performanslı ve ölçeklenebilir uygulamalar geliştiriyorum. Teknolojiyi verimli kullanarak yenilikçi çözümler üretmeyi ve sürekli kendimi geliştirmeyi önemsiyorum.
           </motion.p>
 
           {/* Butonlar */}

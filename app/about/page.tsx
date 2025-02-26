@@ -74,7 +74,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skills.map((skillGroup, index) => (
                 <div key={index} className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-300 flex items-center gap-2">
+                  <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-200 text-transparent bg-clip-text flex items-center gap-2">
                     {skillGroup.category === 'Frontend' && <FaCode />}
                     {skillGroup.category === 'Backend' && <FaCode />}
                     {skillGroup.category === 'Araçlar' && <FaTools />}
