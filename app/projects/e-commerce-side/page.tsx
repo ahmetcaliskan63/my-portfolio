@@ -134,11 +134,9 @@ export default function ECommerceSideDetail() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Next.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">TypeScript</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Tailwind CSS</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">PostgreSQL</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Stripe</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">JavaScript</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">TailwindCSS</span>
                 </div>
               </div>
 

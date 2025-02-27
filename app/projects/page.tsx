@@ -47,7 +47,7 @@ const projects = [
     title: 'E-Commerce Side',
     description: 'Modern ve kullanıcı dostu bir e-ticaret platformu. Ürün yönetimi, sepet işlemleri, ödeme entegrasyonu ve admin paneli gibi kapsamlı özelliklere sahip full-stack bir web uygulaması.',
     image: '/resimler/e-commerce-side/eco1.png',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+    technologies: ['React', 'JavaScript', 'TailwindCSS'],
     githubUrl: 'https://github.com/ahmetcaliskan63/e-commerce-side',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/e-commerce-side'
