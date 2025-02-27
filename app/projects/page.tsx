@@ -20,7 +20,7 @@ const projects = [
     title: 'KYK Yemek Menüsü',
     description: 'Kırklarelindeki üniversite öğrencilerinin yurt yemek menülerine kolayca erişebilmesini sağlamak için React ile geliştirdiğimiz bu uygulama, kullanıcıların günlük ve geçmiş menüleri görüntülemesine olanak tanırken, Firebase entegrasyonu sayesinde performans ve etkileşimleri analiz ederek daha verimli bir deneyim sunuyor.',
     image: '/resimler/kykYemek/kyk1.png',
-    technologies: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    technologies: ['React.js', 'Firebase', 'JavaScript'],
     githubUrl: 'https://github.com/yourusername/kyk-menu',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/kykYemek'
@@ -29,7 +29,7 @@ const projects = [
     title: 'Labsis',
     description: 'Labsis, üniversitelerde laboratuvar derslerinin yönetimini kolaylaştıran, akademisyenlerin deneylerini paylaşmasını ve öğrencilerin ders içeriklerine erişimini sağlayan kapsamlı bir web uygulamasıdır.',
     image: '/resimler/labsis/lab1.png',
-    technologies: ['React.js', 'Firebase', 'Material-UI', 'Node.js'],
+    technologies: ['CodeIgniter 4', 'PHP', 'JavaScript', 'HTML/CSS'],
     githubUrl: 'https://github.com/yourusername/labsis',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/labsis'
@@ -38,11 +38,20 @@ const projects = [
     title: 'Restoran Sipariş Takip Sistemi',
     description: 'Restoran işletmelerinin sipariş süreçlerini dijitalleştiren ve yöneten kapsamlı bir web uygulaması. Masaların durumu, siparişlerin takibi, mutfak yönetimi ve raporlama gibi temel özellikleri içerir.',
     image: '/resimler/Rsts/rsts1.png',
-    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+    technologies: ['ASP.NET Core', 'MVC Yapısı', 'JavaScript', 'HTML/CSS',"PostgreSQL"],
     githubUrl: 'https://github.com/ahmetcaliskan63/RestoranSiparisTakip',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/RestoranSiparisTakip'
-  } 
+  },
+  {
+    title: 'E-Commerce Side',
+    description: 'Modern ve kullanıcı dostu bir e-ticaret platformu. Ürün yönetimi, sepet işlemleri, ödeme entegrasyonu ve admin paneli gibi kapsamlı özelliklere sahip full-stack bir web uygulaması.',
+    image: '/resimler/e-commerce-side/eco1.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+    githubUrl: 'https://github.com/ahmetcaliskan63/e-commerce-side',
+    liveUrl: 'https://example.com',
+    detailUrl: '/projects/e-commerce-side'
+  }
 ];
 
 export default function Projects() {
@@ -88,11 +97,11 @@ export default function Projects() {
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.technologies.map((tech) => (
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {project.technologies && project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 text-xs rounded-full bg-primary/20 text-primary"
+                          className="px-3 py-1.5 text-sm bg-[#242424] text-gray-300 rounded-md border border-gray-700/50"
                         >
                           {tech}
                         </span>

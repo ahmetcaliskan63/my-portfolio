@@ -7,11 +7,18 @@ import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const images = [
-  '/resimler/kykYemek/kyk1.png',
-  '/resimler/kykYemek/kyk2.png',
+  '/resimler/e-commerce-side/eco1.png',
+  '/resimler/e-commerce-side/eco2.png',
+  '/resimler/e-commerce-side/eco3.png',
+  '/resimler/e-commerce-side/eco4.png',
+  '/resimler/e-commerce-side/eco5.png',
+  '/resimler/e-commerce-side/eco6.png',
+  '/resimler/e-commerce-side/eco7.png',
+  '/resimler/e-commerce-side/eco8.png',
+  '/resimler/e-commerce-side/eco9.png'
 ];
 
-export default function KykYemekDetail() {
+export default function ECommerceSideDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -52,7 +59,7 @@ export default function KykYemekDetail() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
-
+          
           {/* Navigation Arrows */}
           <button
             onClick={prevImage}
@@ -66,7 +73,7 @@ export default function KykYemekDetail() {
           >
             <FiArrowRight size={24} />
           </button>
-
+          
           {/* Thumbnail Navigation */}
           <div className="flex justify-center gap-3 mt-4 overflow-x-auto pb-2">
             {images.map((_, index) => (
@@ -93,14 +100,10 @@ export default function KykYemekDetail() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
             <p className="text-gray-300 leading-relaxed">
-            Kırklareli’ndeki üniversite öğrencileri, yurtlardaki yemek listelerini takip etmekte zorlanıyordu. 
-            Menülerin fotoğraflarını çekmek ve içeriğini anlamak zahmetli bir süreçti. Bu sorunu çözmek için
-             bir arkadaşım ile birlikte React kullanarak pratik bir uygulama geliştirdik. Uygulamamız sayesinde öğrenciler,
-              günlük yemek listesini anında görüntüleyebiliyor ve 5 gün öncesine veya sonrasına giderek menüleri kolayca 
-              inceleyebiliyor.Şu anda ayda yaklaşık 35.000 tıklama alıyoruz ve Firebase ile performansı ve kullanıcı 
-              etkileşimlerini izliyoruz. Basit ama etkili bir çözüm sunan bu platform, öğrencilerin zaman kaybetmeden
-               yemek menülerine ulaşmasını sağlıyor. Geleneksel yöntemlerle yaşanan karmaşıklığı ortadan kaldırarak,
-                kampüs yaşamını daha pratik ve erişilebilir hale getirmeyi amaçlıyoruz.
+              E-Commerce Side, modern web teknolojilerini kullanarak geliştirdiğim kapsamlı bir e-ticaret platformudur. 
+              Next.js ve TypeScript kullanarak oluşturduğum bu proje, hem kullanıcılar hem de yöneticiler için 
+              optimize edilmiş bir deneyim sunar. Tailwind CSS ile tasarlanan responsive arayüz, tüm cihazlarda 
+              kusursuz bir görünüm sağlarken, PostgreSQL veritabanı ile güvenli ve hızlı veri yönetimi sağlanır.
             </p>
           </div>
 
@@ -110,20 +113,19 @@ export default function KykYemekDetail() {
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Günlük ve Geçmiş-Menü Erişimi – Kullanıcılar, günün yemek menüsünü anında görüntüleyebilir
-                   ve 5 gün öncesine veya sonrasına ait menülere kolayca ulaşabilir.
+                  Gelişmiş Ürün Yönetimi – Kategorilere göre filtreleme, arama ve sıralama özellikleri ile kolay ürün bulma imkanı.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Hızlı ve Kullanıcı Dostu Arayüz – React tabanlı modern ve sade bir arayüz ile menüye hızlı erişim sağlanır.
+                  Güvenli Ödeme Sistemi – Stripe entegrasyonu ile güvenli ve kolay ödeme işlemleri.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Firebase Entegrasyonu – Kullanıcı etkileşimleri ve performans analizleri Firebase üzerinden takip edilerek iyileştirmeler yapılır.
+                  Admin Paneli – Ürün, kategori ve sipariş yönetimi için kullanıcı dostu yönetim arayüzü.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Mobil ve Web Uyumlu – Hem mobil cihazlarda hem de masaüstü tarayıcılarda sorunsuz çalışan, erişilebilir bir yapı sunar.
+                  Performans Optimizasyonu – SEO dostu yapı ve hızlı sayfa yüklenme süreleri.
                 </li>
               </ul>
             </div>
@@ -132,18 +134,19 @@ export default function KykYemekDetail() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Firebase</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">JavaScript</span>
-
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Next.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">TypeScript</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Tailwind CSS</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">PostgreSQL</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Stripe</span>
                 </div>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
                 <div className="flex flex-col gap-4">
-                <a
-                    href="https://github.com/ahmetcaliskan63/kyk_yemek_kahvalti"
+                  <a
+                    href="https://github.com/ahmetcaliskan63/e-commerce-side"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
