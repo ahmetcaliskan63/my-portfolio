@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: 'KYK Yemek Menüsü',
-    description: 'KYK yurtlarında kalan öğrenciler için geliştirilmiş, günlük ve haftalık yemek & kahvaltı menülerini gösteren, besin değerleri hakkında bilgi veren modern bir web uygulaması.',
+    description: 'Kırklarelindeki üniversite öğrencilerinin yurt yemek menülerine kolayca erişebilmesini sağlamak için React ile geliştirdiğimiz bu uygulama, kullanıcıların günlük ve geçmiş menüleri görüntülemesine olanak tanırken, Firebase entegrasyonu sayesinde performans ve etkileşimleri analiz ederek daha verimli bir deneyim sunuyor.',
     image: '/resimler/kykYemek/kyk1.png',
     technologies: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     githubUrl: 'https://github.com/yourusername/kyk-menu',
@@ -27,14 +27,22 @@ const projects = [
   },
   {
     title: 'Labsis',
-    description: 'Laboratuvar derslerinin yönetimi için geliştirilmiş, öğrenci yoklama, deney raporları takibi ve not değerlendirme sistemi sunan kapsamlı bir web uygulaması.',
+    description: 'Labsis, üniversitelerde laboratuvar derslerinin yönetimini kolaylaştıran, akademisyenlerin deneylerini paylaşmasını ve öğrencilerin ders içeriklerine erişimini sağlayan kapsamlı bir web uygulamasıdır.',
     image: '/resimler/labsis/lab1.png',
     technologies: ['React.js', 'Firebase', 'Material-UI', 'Node.js'],
     githubUrl: 'https://github.com/yourusername/labsis',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/labsis'
-  }
-  
+  },
+  {
+    title: 'Restoran Sipariş Takip Sistemi',
+    description: 'Restoran işletmelerinin sipariş süreçlerini dijitalleştiren ve yöneten kapsamlı bir web uygulaması. Masaların durumu, siparişlerin takibi, mutfak yönetimi ve raporlama gibi temel özellikleri içerir.',
+    image: '/resimler/Rsts/rsts1.png',
+    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+    githubUrl: 'https://github.com/ahmetcaliskan63/RestoranSiparisTakip',
+    liveUrl: 'https://example.com',
+    detailUrl: '/projects/RestoranSiparisTakip'
+  } 
 ];
 
 export default function Projects() {

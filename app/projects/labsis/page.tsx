@@ -97,7 +97,8 @@ export default function LabsisDetail() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
             <p className="text-gray-300 leading-relaxed">
-              Labsis, laboratuvar derslerinin yönetimi için geliştirilmiş kapsamlı bir web uygulamasıdır. Öğrencilerin deney raporlarını yüklemesine, öğretmenlerin değerlendirme yapmasına ve laboratuvar kaynaklarının etkin yönetimine olanak tanır.
+            Profesyonel iş hayatımdaki ilk projem olan Labsis, üniversitelerdeki laboratuvar derslerinin yönetimini kolaylaştırmak için geliştirilmiş kapsamlı bir web uygulamasıdır. Bu platform, akademisyenlerin gerçekleştirdikleri deneyleri ve laboratuvar çalışmalarını sisteme yüklemelerine olanak tanırken, öğrencilerin de bu içeriklere kolayca erişerek derslerini takip etmelerini sağlar.
+            Aynı zamanda, üniversite hocalarının laboratuvar çalışmalarını sergileyebileceği bir alan sunarak bilimsel paylaşımı teşvik eder. Kullanıcı dostu arayüzü ve güçlü yönetim özellikleriyle Labsis, laboratuvar derslerini daha verimli ve erişilebilir hale getirmeyi amaçlayan yenilikçi bir çözümdür.
             </p>
           </div>
 
@@ -107,19 +108,19 @@ export default function LabsisDetail() {
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Deney raporu yükleme ve değerlendirme
+                  Öğrenci ve Akademisyen Hesapları – Kullanıcılar, öğrenci veya akademisyen olarak kayıt olabilir ve farklı yetkilere sahip olabilir.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Laboratuvar rezervasyon sistemi
+                  Laboratuvar Dersi Takibi – Öğrenciler, kayıtlı oldukları laboratuvar derslerini ve deney içeriklerini kolayca takip edebilir.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Öğrenci-öğretmen iletişim modülü
+                  Deney ve Laboratuvar Paylaşımı – Akademisyenler, yaptıkları deneyleri sisteme yükleyerek öğrencilerle paylaşabilir.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Detaylı raporlama sistemi
+                  Duyuru ve Bildirim Sistemi – Hocalar, laboratuvarlarla ilgili duyuruları paylaşabilir ve öğrenciler anlık bildirimler alabilir.
                 </li>
               </ul>
             </div>
@@ -128,10 +129,10 @@ export default function LabsisDetail() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Node.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Express.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">PostgreSQL</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">CodeIgniter 4</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">PHP</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">JavaScript</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">HTML/CSS</span>
                 </div>
               </div>
 
