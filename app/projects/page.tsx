@@ -22,7 +22,7 @@ const projects = [
     image: '/resimler/kykYemek/kyk1.png',
     technologies: ['React.js', 'Firebase', 'JavaScript'],
     githubUrl: 'https://github.com/yourusername/kyk-menu',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://kykmenu.vercel.app/',
     detailUrl: '/projects/kykYemek'
   },
   {
@@ -51,6 +51,15 @@ const projects = [
     githubUrl: 'https://github.com/ahmetcaliskan63/e-commerce-side',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/e-commerce-side'
+  },
+  {
+    title: 'AssignmentHelper',
+    description: 'Öğrencilerin ödev ve proje yönetimini kolaylaştıran bir web uygulaması. Ödevlerin takibi, teslim tarihleri hatırlatması, dosya yönetimi ve grup çalışması özellikleri ile akademik başarıyı destekler.',
+    image: '/resimler/AssignmentHelper/A1.jpg',
+    technologies: ['React native', 'Node.js', 'Express.js', 'mySQL'],
+    githubUrl: 'https://github.com/ahmetcaliskan63/AssignmentHelper',
+    liveUrl: 'https://example.com',
+    detailUrl: '/projects/AssignmentHelper'
   }
 ];
 

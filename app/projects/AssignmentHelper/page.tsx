@@ -7,11 +7,20 @@ import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const images = [
-  '/resimler/kykYemek/kyk1.png',
-  '/resimler/kykYemek/kyk2.png',
+  '/resimler/AssignmentHelper/A1.jpg',
+  '/resimler/AssignmentHelper/A2.jpg',
+  '/resimler/AssignmentHelper/A3.jpg',
+  '/resimler/AssignmentHelper/A4.jpg',
+  '/resimler/AssignmentHelper/A5.jpg',
+  '/resimler/AssignmentHelper/A6.jpg',
+  '/resimler/AssignmentHelper/A7.jpg',
+  '/resimler/AssignmentHelper/A8.jpg',
+  '/resimler/AssignmentHelper/A9.jpg',
+
+
 ];
 
-export default function KykYemekDetail() {
+export default function AssignmentHelperDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -93,14 +102,11 @@ export default function KykYemekDetail() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
             <p className="text-gray-300 leading-relaxed">
-            Kırklareli’ndeki üniversite öğrencileri, yurtlardaki yemek listelerini takip etmekte zorlanıyordu. 
-            Menülerin fotoğraflarını çekmek ve içeriğini anlamak zahmetli bir süreçti. Bu sorunu çözmek için
-             bir arkadaşım ile birlikte React kullanarak pratik bir uygulama geliştirdik. Uygulamamız sayesinde öğrenciler,
-              günlük yemek listesini anında görüntüleyebiliyor ve 5 gün öncesine veya sonrasına giderek menüleri kolayca 
-              inceleyebiliyor.Şu anda ayda yaklaşık 35.000 tıklama alıyoruz ve Firebase ile performansı ve kullanıcı 
-              etkileşimlerini izliyoruz. Basit ama etkili bir çözüm sunan bu platform, öğrencilerin zaman kaybetmeden
-               yemek menülerine ulaşmasını sağlıyor. Geleneksel yöntemlerle yaşanan karmaşıklığı ortadan kaldırarak,
-                kampüs yaşamını daha pratik ve erişilebilir hale getirmeyi amaçlıyoruz.
+              AssignmentHelper, öğrencilerin akademik görevlerini daha etkili bir şekilde yönetmelerine yardımcı olmak için 
+              tasarlanmış kapsamlı bir web uygulamasıdır. MERN stack kullanılarak geliştirilen bu platform, öğrencilerin 
+              ödevlerini organize etmelerine, teslim tarihlerini takip etmelerine ve grup çalışmalarını koordine etmelerine 
+              olanak tanır. Kullanıcı dostu arayüzü ve gelişmiş özellikleriyle, akademik başarıyı destekleyici bir araç 
+              olarak hizmet vermektedir.
             </p>
           </div>
 
@@ -110,20 +116,19 @@ export default function KykYemekDetail() {
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Günlük ve Geçmiş-Menü Erişimi – Kullanıcılar, günün yemek menüsünü anında görüntüleyebilir
-                   ve 5 gün öncesine veya sonrasına ait menülere kolayca ulaşabilir.
+                  Ödev Yönetimi – Ödevlerin detaylı takibi, teslim tarihi hatırlatmaları ve önceliklendirme sistemi
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Hızlı ve Kullanıcı Dostu Arayüz – React tabanlı modern ve sade bir arayüz ile menüye hızlı erişim sağlanır.
+                  Dosya Yönetimi – Ödevlerle ilgili dosyaların güvenli depolanması ve paylaşımı
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Firebase Entegrasyonu – Kullanıcı etkileşimleri ve performans analizleri Firebase üzerinden takip edilerek iyileştirmeler yapılır.
+                  Grup Çalışması – Ekip projelerinde iş bölümü ve ilerleme takibi
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500">•</span>
-                  Mobil ve Web Uyumlu – Hem mobil cihazlarda hem de masaüstü tarayıcılarda sorunsuz çalışan, erişilebilir bir yapı sunar.
+                  İstatistikler – Performans analizi ve başarı takibi
                 </li>
               </ul>
             </div>
@@ -132,18 +137,18 @@ export default function KykYemekDetail() {
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React.js</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Firebase</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">JavaScript</span>
-
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React native</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Node.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">Express.js</span>
+                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">mySQL</span>
                 </div>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
                 <div className="flex flex-col gap-4">
-                <a
-                    href="https://github.com/ahmetcaliskan63/kyk_yemek_kahvalti"
+                  <a
+                    href="https://github.com/ahmetcaliskan63/AssignmentHelper"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
@@ -152,7 +157,7 @@ export default function KykYemekDetail() {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://kykmenu.vercel.app/"
+                    href="#"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
