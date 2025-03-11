@@ -60,6 +60,15 @@ const projects = [
     githubUrl: 'https://github.com/ahmetcaliskan63/AssignmentHelper',
     liveUrl: 'https://example.com',
     detailUrl: '/projects/AssignmentHelper'
+  },
+  {
+    title: 'SKS Başvuru Sistemi',
+    description: 'Üniversite öğrencilerinin Sağlık, Kültür ve Spor Dairesi Başkanlığı\'na yapacakları başvuruları dijital ortama taşıyan, başvuru süreçlerini kolaylaştıran ve yönetim paneli sunan kapsamlı bir web uygulaması.',
+    image: '/resimler/sksBasvuru/b1.png',
+    technologies: ['PHP', 'CodeIgniter 4', 'MySQL', 'JavaScript', 'Bootstrap',"HTML/CSS"],
+    githubUrl: 'https://github.com/ahmetcaliskan63/sksBasvuruSistemi',
+    liveUrl: 'https://example.com',
+    detailUrl: '/projects/sksBasvuruSistemi'
   }
 ];
 
