@@ -3,11 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --primary: #3b82f6;
+  --primary: #007AFF;
+  --space-bg: #050B18;
+  --glow-blue: rgba(0, 240, 255, 0.4);
+  --glow-purple: rgba(188, 19, 254, 0.4);
 }
 
 body {
-  @apply bg-gray-900 text-white;
+  @apply bg-space-900 text-white overflow-x-hidden;
+  background-attachment: fixed;
+}
+
+.holographic-glow {
+  box-shadow: 0 0 20px var(--glow-blue), inset 0 0 10px var(--glow-blue);
+  backdrop-filter: blur(10px);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px var(--glow-blue);
 }
 
 /* Özel scrollbar stilleri */
@@ -17,9 +30,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary;
+  background: var(--space-bg);
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-primary rounded-full hover:bg-opacity-80;
+  box-shadow: 0 0 10px var(--glow-blue);
 }
