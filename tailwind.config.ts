@@ -12,6 +12,12 @@ export default {
       colors: {
         primary: "#007AFF",
         secondary: "#6B7280",
+        electric: "#00F0FF",
+        cyber: "#BC13FE",
+        space: {
+          800: "#0A1225",
+          900: "#050B18",
+        },
         dark: {
           DEFAULT: "#1A1A1A",
           100: "#171717",
@@ -26,14 +32,6 @@ export default {
           300: "#D4D4D4",
           400: "#A3A3A3",
         },
-      },
-      backgroundColor: {
-        primary: "var(--background-primary)",
-        secondary: "var(--background-secondary)",
-      },
-      textColor: {
-        primary: "var(--text-primary)",
-        secondary: "var(--text-secondary)",
       },
     },
   },
