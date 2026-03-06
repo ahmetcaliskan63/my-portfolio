@@ -41,32 +41,32 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-space-900 px-6">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-x-hidden bg-space-900 px-6 py-20 md:py-0">
       {/* Background Subtle Gradient */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-space-800/40 via-space-900 to-space-900 pointer-events-none" />
 
-      <div className="container mx-auto max-w-4xl flex flex-col items-center text-center relative z-10 py-12 md:py-20">
+      <div className="container mx-auto max-w-4xl flex flex-col items-center text-center relative z-10">
 
         {/* Main Name Heading */}
-        <h1 className="text-4xl md:text-7xl font-black mb-4 bg-gradient-to-r from-electric via-cyber to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent tracking-tighter leading-none whitespace-nowrap">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 bg-gradient-to-r from-electric via-cyber to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent tracking-tighter leading-[1.1] md:leading-none sm:whitespace-nowrap">
           Merhaba, Ben Ahmet Çalışkan
         </h1>
 
         {/* Job Title */}
-        <h2 className="text-lg md:text-xl text-gray-100 font-bold mb-8 tracking-[0.3em] uppercase">
+        <h2 className="text-sm sm:text-base md:text-xl text-gray-100 font-bold mb-6 md:mb-8 tracking-[0.15em] md:tracking-[0.3em] uppercase px-4">
           Full Stack Developer & Yazılım Mühendisi
         </h2>
 
         {/* Description */}
-        <p className="text-gray-400 text-base md:text-lg mb-12 max-w-3xl leading-relaxed font-normal">
+        <p className="text-gray-400 text-sm md:text-lg mb-10 md:mb-12 max-w-2xl leading-relaxed font-normal px-2">
           Modern web ve mobil teknolojilerini kullanarak kullanıcı odaklı, yüksek performanslı ve ölçeklenebilir uçtan uca dijital çözümler geliştiriyorum. Karmaşık backend mimarilerinden dinamik frontend arayüzlerine kadar yazılım yaşam döngüsünü profesyonel standartlarda yönetiyorum.
         </p>
 
         {/* Primary Buttons */}
-        <div className="flex flex-col md:flex-row gap-5 mb-8 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 w-full sm:w-auto px-4">
           <button
             onClick={handleProjectsClick}
-            className="flex items-center justify-center gap-3 px-10 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all group shadow-[0_0_20px_rgba(0,123,255,0.3)] hover:shadow-[0_0_35px_rgba(0,123,255,0.5)]"
+            className="flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all group shadow-[0_0_20px_rgba(0,123,255,0.3)] hover:shadow-[0_0_35px_rgba(0,123,255,0.5)] text-sm md:text-base"
           >
             <span>Projelerimi İncele</span>
             <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
@@ -74,7 +74,7 @@ export default function Home() {
 
           <button
             onClick={handleContactClick}
-            className="px-10 py-4 bg-transparent border-2 border-gray-700 hover:border-gray-400 text-gray-200 rounded-xl font-bold transition-all shadow-lg hover:bg-white/5"
+            className="px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-gray-700 hover:border-gray-400 text-gray-200 rounded-xl font-bold transition-all shadow-lg hover:bg-white/5 text-sm md:text-base"
           >
             İletişime Geç
           </button>
@@ -83,14 +83,14 @@ export default function Home() {
         {/* Download CV Button */}
         <button
           onClick={handleDownloadCV}
-          className="flex items-center justify-center gap-3 px-10 py-4 bg-cyber/80 hover:bg-cyber text-white rounded-xl font-bold transition-all mb-12 shadow-[0_0_20px_rgba(188,19,254,0.3)] hover:shadow-[0_0_35px_rgba(188,19,254,0.5)]"
+          className="flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-cyber/80 hover:bg-cyber text-white rounded-xl font-bold transition-all mb-12 shadow-[0_0_200px_rgba(188,19,254,0.15)] hover:shadow-[0_0_35px_rgba(188,19,254,0.4)] text-sm md:text-base"
         >
           <span>CV İndir</span>
           <FiDownload className="text-xl animate-bounce" />
         </button>
 
         {/* Social Icons */}
-        <div className="flex gap-10 items-center relative">
+        <div className="flex gap-6 md:gap-10 items-center relative">
           {[
             { id: 'github', icon: <FaGithub />, link: 'https://github.com/ahmetcaliskan63/' },
             { id: 'linkedin', icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/ahmetcaliskann/' },
@@ -103,7 +103,7 @@ export default function Home() {
                 onClick={social.isEmail ? handleCopyEmail : undefined}
                 target={social.link.startsWith('http') ? "_blank" : undefined}
                 rel={social.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                className="text-3xl text-gray-500 hover:text-electric transition-all duration-300 hover:scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] flex items-center justify-center"
+                className="text-2xl md:text-3xl text-gray-500 hover:text-electric transition-all duration-300 hover:scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] flex items-center justify-center"
               >
                 {social.icon}
               </a>
@@ -131,12 +131,12 @@ export default function Home() {
 
       {/* Footer Branded Line */}
       <div className="absolute bottom-8 w-full text-center px-6">
-        <div className="flex items-center justify-center gap-6 opacity-60">
-          <div className="h-[1px] flex-1 max-w-[100px] bg-gradient-to-r from-transparent via-gray-700 to-transparent md:via-gray-800" />
-          <p className="text-[9px] md:text-[11px] tracking-[0.2em] md:tracking-[0.4em] uppercase font-bold bg-gradient-to-r from-gray-500 via-white/40 to-gray-500 bg-clip-text text-transparent">
+        <div className="flex items-center justify-center gap-4 md:gap-6 opacity-60">
+          <div className="hidden sm:block h-[1px] flex-1 max-w-[100px] bg-gradient-to-r from-transparent via-gray-700 to-transparent md:via-gray-800" />
+          <p className="text-[8px] md:text-[11px] tracking-[0.2em] md:tracking-[0.4em] uppercase font-bold bg-gradient-to-r from-gray-500 via-white/40 to-gray-500 bg-clip-text text-transparent">
             Ahmet ÇALIŞKAN tarafından tasarlanıp kodlanmıştır. 2025
           </p>
-          <div className="h-[1px] flex-1 max-w-[100px] bg-gradient-to-r from-transparent via-gray-700 to-transparent md:via-gray-800" />
+          <div className="hidden sm:block h-[1px] flex-1 max-w-[100px] bg-gradient-to-r from-transparent via-gray-700 to-transparent md:via-gray-800" />
         </div>
       </div>
     </div>
