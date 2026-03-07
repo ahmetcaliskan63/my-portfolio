@@ -265,7 +265,7 @@ export default function About() {
             <div className="absolute -inset-x-20 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent -z-10" />
           </h1>
           <p className="text-lg md:text-2xl font-extralight text-gray-400 max-w-4xl mx-auto leading-relaxed tracking-wide">
-            <span className="text-electric font-bold drop-shadow-[0_0_15px_rgba(0,243,255,0.3)]">Modern Teknolojilerle</span> Geleceğin <span className="text-cyber font-bold drop-shadow-[0_0_15px_rgba(255,0,229,0.3)] text-transparent bg-clip-text bg-gradient-to-r from-cyber to-primary">Çözümlerini</span> İnşa Ediyorum.
+            <span className="text-electric font-bold drop-shadow-[0_0_15px_rgba(0,243,255,0.3)]">Yenilikçi Mühendislik</span> ile Karmaşık Fikirleri <span className="text-cyber font-bold drop-shadow-[0_0_15px_rgba(255,0,229,0.3)] text-transparent bg-clip-text bg-gradient-to-r from-cyber to-primary">Kusursuz Dijital Deneyimlere</span> Dönüştürüyorum.
           </p>
         </motion.div>
 
