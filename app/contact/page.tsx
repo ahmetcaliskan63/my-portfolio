@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { FiSend, FiCheckCircle, FiAlertCircle, FiLoader } from 'react-icons/fi';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -9,11 +10,30 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form gönderme işlemi burada yapılacak
-    console.log('Form data:', formData);
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,58 +45,70 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"> 
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 -z-10" />
-      
-      <div className="container mx-auto px-4 py-12">
-        <motion.h1 
-          className="text-4xl md:text-6xl font-bold mb-8 text-center bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          İletişim
-        </motion.h1>
-        
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-space-950 px-4 py-32">
+      {/* Background Decor */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary/10 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-cyber/10 blur-[150px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto max-w-4xl relative z-10">
         <motion.div
-          className="max-w-lg mx-auto bg-gray-800/50 rounded-lg p-8 border border-gray-700"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+        >
+          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-500 text-transparent bg-clip-text">
+            İletişime Geç
+          </h1>
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
+            Sorularınız, projeleriniz veya sadece tanışmak için bana ulaşabilirsiniz.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="max-w-2xl mx-auto bg-white/5 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-2xl"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                Ad Soyad
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-3">
+                <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-gray-500 ml-4">
+                  Ad Soyad
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Ahmet Çalışkan"
+                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-white/20"
+                />
+              </div>
+
+              <div className="space-y-3">
+                <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-gray-500 ml-4">
+                  E-posta
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="ahmet@example.com"
+                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-white/20"
+                />
+              </div>
             </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                E-posta
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+
+            <div className="space-y-3">
+              <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-gray-500 ml-4">
                 Mesaj
               </label>
               <textarea
@@ -85,16 +117,37 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={4}
-                className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                rows={5}
+                placeholder="Nasıl yardımcı olabilirim?"
+                className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-white/20 resize-none"
               />
             </div>
-            
+
             <button
               type="submit"
-              className="w-full bg-[#1a1a1a] text-white px-8 py-3 rounded-lg transition-all duration-300 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:border-blue-500/50"
+              disabled={status === 'loading'}
+              className="group relative w-full bg-primary hover:bg-primary/90 text-white font-black py-5 rounded-2xl transition-all shadow-[0_0_20px_rgba(0,123,255,0.3)] hover:shadow-[0_0_35px_rgba(0,123,255,0.5)] flex items-center justify-center gap-3 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Gönder
+              <span className="relative z-10 flex items-center gap-3">
+                {status === 'loading' ? (
+                  <>
+                    <FiLoader className="text-xl animate-spin" /> GÖNDERİLİYOR...
+                  </>
+                ) : status === 'success' ? (
+                  <>
+                    <FiCheckCircle className="text-xl" /> BAŞARIYLA GÖNDERİLDİ
+                  </>
+                ) : status === 'error' ? (
+                  <>
+                    <FiAlertCircle className="text-xl" /> BİR HATA OLUŞTU
+                  </>
+                ) : (
+                  <>
+                    GÖNDER <FiSend className="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </>
+                )}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </button>
           </form>
         </motion.div>
