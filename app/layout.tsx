@@ -7,8 +7,9 @@ import Header from './components/Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Ahmet Çalışkan - Portfolio',
-  description: 'Frontend Developer Portfolio',
+  title: 'Ahmet Çalışkan | Full Stack Developer & Yazılım Mühendisi',
+  description: 'Modern web ve mobil teknolojilerinde uzmanlaşmış Full Stack Developer Ahmet Çalışkan\'ın portfolyosu. React, Next.js, .NET Core ve daha fazlası.',
+  keywords: ['Ahmet Çalışkan', 'Full Stack Developer', 'Yazılım Mühendisi', 'Portfolio', 'React Developer', 'Next.js', 'Blockchain', '.NET Core'],
 };
 
 export default function RootLayout({
