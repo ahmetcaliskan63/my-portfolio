@@ -213,3 +213,88 @@ export const volunteering: Experience[] = [
         ]
     }
 ];
+
+export interface Project {
+    title: string;
+    description: string;
+    image: string;
+    technologies: string[];
+    githubUrl: string;
+    liveUrl: string;
+    detailUrl: string;
+}
+
+export const projects: Project[] = [
+    {
+        title: 'Dershane Takip Sistemi',
+        description: 'Eğitim kurumları için modern, oyunlaştırılmış ve veri odaklı yönetim platformu. Aktivite ağacı, performans grafikleri ve rol bazlı yönetim sistemi ile eğitim süreçlerini dijitalleştirir.',
+        image: '/resimler/dershaneTakip/1.png',
+        technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'P5.js', 'Framer Motion'],
+        githubUrl: '#',
+        liveUrl: '',
+        detailUrl: '/projects/dershaneTakip'
+    },
+    {
+        title: 'Social Campus',
+        description: 'Social Campus, Kırklareli Üniversitesi öğrencilerinin kampüs yaşamını kolaylaştıran ve zenginleştiren; yemek menüsü görüntüleme, öğrenci kulüplerine katılma, kampüs gündemi hakkında sohbet etme ve ikinci el eşya satışı gibi özellikler sunar.',
+        image: '/resimler/kluCampus/klu1.png',
+        technologies: ['React native', 'Node.js', 'Express.js', 'mySQL'],
+        githubUrl: 'https://github.com/ahmetcaliskan63/SOCIALCAMPUS1',
+        liveUrl: '',
+        detailUrl: '/projects/kluCampus'
+    },
+    {
+        title: 'KYK Yemek Menüsü',
+        description: 'Kırklarelindeki university öğrencilerinin yurt yemek menülerine kolayca erişebilmesini sağlamak için React ile geliştirdiğimiz bu uygulama, kullanıcıların günlük ve geçmiş menüleri görüntülemesine olanak tanırken, Firebase entegrasyonu sayesinde performans ve etkileşimleri analiz ederek daha verimli bir deneyim sunuyor.',
+        image: '/resimler/kykYemek/kyk1.png',
+        technologies: ['React.js', 'Firebase', 'JavaScript'],
+        githubUrl: 'https://github.com/yourusername/kyk-menu',
+        liveUrl: 'https://kykmenu.vercel.app/',
+        detailUrl: '/projects/kykYemek'
+    },
+    {
+        title: 'Labsis',
+        description: 'Labsis, üniversitelerde laboratuvar derslerinin yönetimini kolaylaştıran, akademisyenlerin deneylerini paylaşmasını ve öğrencilerin ders içeriklerine erişimini sağlayan kapsamlı bir web uygulamasıdır.',
+        image: '/resimler/labsis/lab1.png',
+        technologies: ['CodeIgniter 4', 'PHP', 'JavaScript', 'HTML/CSS'],
+        githubUrl: 'https://github.com/yourusername/labsis',
+        liveUrl: '',
+        detailUrl: '/projects/labsis'
+    },
+    {
+        title: 'Restoran Sipariş Takip Sistemi',
+        description: 'Restoran işletmelerinin sipariş süreçlerini dijitalleştiren ve yöneten kapsamlı bir web uygulaması. Masaların durumu, siparişlerin takibi, mutfak yönetimi ve raporlama gibi temel özellikleri içerir.',
+        image: '/resimler/Rsts/rsts1.png',
+        technologies: ['ASP.NET Core', 'MVC Yapısı', 'JavaScript', 'HTML/CSS', "PostgreSQL"],
+        githubUrl: 'https://github.com/ahmetcaliskan63/RestoranSiparisTakip',
+        liveUrl: '',
+        detailUrl: '/projects/RestoranSiparisTakip'
+    },
+    {
+        title: 'E-Commerce Side',
+        description: 'Modern ve kullanıcı dostu bir e-ticaret platformu. Ürün yönetimi, sepet işlemleri, ödeme entegrasyonu ve admin paneli gibi kapsamlı özelliklere sahip full-stack bir web uygulaması.',
+        image: '/resimler/e-commerce-side/eco1.png',
+        technologies: ['React', 'JavaScript', 'TailwindCSS'],
+        githubUrl: 'https://github.com/ahmetcaliskan63/e-commerce-side',
+        liveUrl: '',
+        detailUrl: '/projects/e-commerce-side'
+    },
+    {
+        title: 'AssignmentHelper',
+        description: 'Öğrencilerin ödev ve proje yönetimini kolaylaştıran bir web uygulaması. Ödevlerin takibi, teslim tarihleri hatırlatması, dosya yönetimi ve grup çalışması özellikleri ile akademik başarıyı destekler.',
+        image: '/resimler/AssignmentHelper/A1.jpg',
+        technologies: ['React native', 'Node.js', 'Express.js', 'mySQL'],
+        githubUrl: 'https://github.com/ahmetcaliskan63/AssignmentHelper',
+        liveUrl: '',
+        detailUrl: '/projects/AssignmentHelper'
+    },
+    {
+        title: 'SKS Başvuru Sistemi',
+        description: 'Üniversite öğrencilerinin Sağlık, Kültür ve Spor Dairesi Başkanlığı\'na yapacakları başvuruları dijital ortama taşıyan, başvuru süreçlerini kolaylaştıran ve yönetim paneli sunan kapsamlı bir web uygulaması.',
+        image: '/resimler/sksBasvuru/b1.png',
+        technologies: ['PHP', 'CodeIgniter 4', 'MySQL', 'JavaScript', 'Bootstrap', "HTML/CSS"],
+        githubUrl: 'https://github.com/ahmetcaliskan63/sksBasvuruSistemi',
+        liveUrl: '',
+        detailUrl: '/projects/sksBasvuruSistemi'
+    }
+];
