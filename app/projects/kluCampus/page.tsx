@@ -113,16 +113,16 @@ export default function KluCampusDetail() {
           {/* Project Info Section */}
           <div className="lg:col-span-5 space-y-10">
             <div className="space-y-8">
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <FiUsers />, title: 'Topluluklar' },
-                  { icon: <FiMessageSquare />, title: 'Anlık Mesaj' },
-                  { icon: <FiTrendingUp />, title: 'Etkinlik' },
-                  { icon: <FiSettings />, title: 'Özelleştirme' }
+                  { icon: <FiUsers />, title: 'Öğrenci Kulüpleri' },
+                  { icon: <FiMessageSquare />, title: 'Kampüs Gündemi' },
+                  { icon: <FiTrendingUp />, title: 'İkinci El' },
+                  { icon: <FiAward />, title: 'Etkinlikler' }
                 ].map((f, i) => (
-                  <div key={i} className="bg-white/5 p-3 rounded-xl border border-white/5 flex flex-col items-center text-center gap-2">
-                    <div className="text-xl text-blue-500">{f.icon}</div>
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter leading-none">{f.title}</span>
+                  <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-all group">
+                    <div className="text-3xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{f.title}</span>
                   </div>
                 ))}
               </div>
