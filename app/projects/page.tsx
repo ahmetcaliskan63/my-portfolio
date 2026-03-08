@@ -7,11 +7,9 @@ import ProjectCard from '../components/ProjectCard';
 export default function Projects() {
   return (
     <div className="min-h-screen bg-space-950 text-white pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-      {/* Mesh Gradient Background */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
-        <div className="absolute top-[30%] left-[10%] w-[10%] h-[10%] bg-white/5 blur-[100px] rounded-full" />
+      {/* Refined Mesh Gradient Background */}
+      <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
+        <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto max-w-7xl">
@@ -22,14 +20,11 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-24 px-4"
         >
-          <h1 className="text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-[-0.05em] leading-none uppercase relative">
-            <span className="bg-gradient-to-b from-white via-white/90 to-white/20 bg-clip-text text-transparent italic select-none">
-              PROJELERİM
-            </span>
-            <div className="absolute -inset-x-20 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent -z-10" />
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-none uppercase text-white">
+            PROJELERİM
           </h1>
-          <p className="text-lg md:text-2xl font-extralight text-gray-400 max-w-4xl mx-auto leading-relaxed tracking-wide">
-            Fikirleri <span className="text-blue-400 font-bold drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">gerçeğe</span>, kodları <span className="text-purple-400 font-bold drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">etkiye</span> dönüştüren projelerim.
+          <p className="text-lg md:text-xl font-light text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Dijital dünyada <span className="text-blue-400 font-medium">değer yaratan</span>, teknik derinliğe sahip en güncel çalışmalarım.
           </p>
         </motion.div>
 
