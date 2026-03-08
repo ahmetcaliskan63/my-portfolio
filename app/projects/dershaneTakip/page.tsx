@@ -15,26 +15,24 @@ export default function DershaneTakipDetail() {
     const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
     return (
-        <div className="min-h-screen bg-space-950 text-white pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-            {/* Mesh Gradient Background */}
-            <div className="absolute inset-0 overflow-hidden -z-10">
-                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
+        <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
+                <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
             </div>
 
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl pt-10 pb-10">
                 {/* Back Button */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="mb-12"
+                    className="mb-8"
                 >
                     <Link
                         href="/projects"
                         className="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-2xl border border-white/10 transition-all backdrop-blur-md"
                     >
                         <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-                        <span className="font-bold uppercase tracking-widest text-xs md:text-sm">Projelere Dön</span>
+                        <span className="font-bold uppercase tracking-widest text-xs md:text-sm text-white">Projelere Dön</span>
                     </Link>
                 </motion.div>
 
@@ -44,18 +42,18 @@ export default function DershaneTakipDetail() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center max-w-4xl mx-auto mb-16 space-y-6"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-white leading-tight italic select-none uppercase tracking-tighter">
-                        DERSHANE <span className="text-blue-500">TAKİP</span> SİSTEMİ
+                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
+                        DERSHANE <span className="text-blue-500">TAKİP SİSTEMİ</span>
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+                    <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
                         Dershane Takip Sistemi, eğitim kurumları için modern, oyunlaştırılmış ve veri odaklı bir yönetim platformu olarak tasarlanmıştır.
-                        Projenin temel amacı, dershane ortamındaki öğrenci-öğretmen-yönetim etkileşimini dijitalleştirmek ve öğrenci motivasyonunu
+                        Projenin temel amacı, dershane ortamındaki student-teacher-management etkileşimini dijitalleştirmek ve öğrenci motivasyonunu
                         "Aktivite Ağacı" (Growing Tree) gibi oyunlaştırma yöntemleriyle artırmaktır. Farklı dershanelerin aynı platform üzerinden
                         izole bir şekilde yönetilmesine olanak tanıyan prefix sistemi ile kurumsal ve ölçeklenebilir bir yapı sunar.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     {/* Visuals Section (Slider) */}
                     <div className="lg:col-span-7 space-y-8">
                         <motion.div
@@ -108,6 +106,7 @@ export default function DershaneTakipDetail() {
                                 </button>
                             ))}
                         </div>
+
                     </div>
 
                     {/* Project Info Section */}
