@@ -4,164 +4,160 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiShoppingCart, FiShoppingBag, FiTruck, FiShield } from 'react-icons/fi';
 
-const images = [
-  '/resimler/e-commerce-side/eco1.png',
-  '/resimler/e-commerce-side/eco2.png',
-  '/resimler/e-commerce-side/eco3.png',
-  '/resimler/e-commerce-side/eco4.png',
-  '/resimler/e-commerce-side/eco5.png',
-  '/resimler/e-commerce-side/eco6.png',
-  '/resimler/e-commerce-side/eco7.png',
-  '/resimler/e-commerce-side/eco8.png',
-  '/resimler/e-commerce-side/eco9.png'
-];
+const images = Array.from({ length: 9 }, (_, i) => `/resimler/e-commerce-side/eco${i + 1}.png`);
 
-export default function ECommerceSideDetail() {
+export default function ECommerceDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pb-12">
-      <div className="container mx-auto px-4 pt-16">
-        {/* Geri Dön Butonu */}
-        <div className="mb-6">
-          <Link 
-            href="/projects" 
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-lg"
-          >
-            <FiArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Projelere Dön</span>
-          </Link>
-        </div>
+    <div className="min-h-screen bg-space-950 text-white pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
+      {/* Mesh Gradient Background */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
+      </div>
 
-        {/* Görsel Slider */}
+      <div className="container mx-auto max-w-6xl">
+        {/* Back Button */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="relative max-w-4xl mx-auto mb-12 group"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-12"
         >
-          <div className="relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl">
-            <Image
-              src={images[currentImageIndex]}
-              alt={`Screenshot ${currentImageIndex + 1}`}
-              fill
-              className="object-contain"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-          </div>
-          
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-2xl border border-white/10 transition-all backdrop-blur-md"
           >
-            <FiArrowLeft size={24} />
-          </button>
-          <button
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
-          >
-            <FiArrowRight size={24} />
-          </button>
-          
-          {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-3 mt-4 overflow-x-auto pb-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`w-16 h-16 relative rounded-lg overflow-hidden flex-shrink-0 transition-all ${
-                  index === currentImageIndex ? 'ring-2 ring-blue-500 scale-110' : 'opacity-50 hover:opacity-100'
-                }`}
-              >
-                <Image
-                  src={images[index]}
-                  alt={`Thumbnail ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </button>
-            ))}
-          </div>
+            <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+            <span className="font-bold uppercase tracking-widest text-xs md:text-sm">Projelere Dön</span>
+          </Link>
         </motion.div>
 
-        {/* Proje Detayları */}
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 text-blue-400">Proje Hakkında</h2>
-            <p className="text-gray-300 leading-relaxed">
-              E-Commerce Side, modern web teknolojilerini kullanarak geliştirdiğim kapsamlı bir e-ticaret platformudur. 
-              Next.js ve TypeScript kullanarak oluşturduğum bu proje, hem kullanıcılar hem de yöneticiler için 
-              optimize edilmiş bir deneyim sunar. Tailwind CSS ile tasarlanan responsive arayüz, tüm cihazlarda 
-              kusursuz bir görünüm sağlarken, PostgreSQL veritabanı ile güvenli ve hızlı veri yönetimi sağlanır.
-            </p>
+        {/* Project Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center max-w-4xl mx-auto mb-16 space-y-6"
+        >
+          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight italic select-none uppercase tracking-tighter">
+            E-COMMERCE <span className="text-blue-500">SIDE</span>
+          </h1>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+            E-Commerce Side, modern dijital alışveriş deneyimini yeniden tanımlayan, kullanıcı odaklı bir e-ticaret platformudur.
+            Gelişmiş sepet algoritmaları, dinamik ürün filtreleme ve pürüzsüz arayüz geçişleri ile alışveriş sürecini
+            hem keyifli hem de verimli hale getirir. Ölçeklenebilir mimarisi ve güvenli ödeme altyapısı entegrasyonuna
+            hazır yapısıyla tam kapsamlı bir çözüm sunar.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Visuals Section (Slider) */}
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="relative group"
+            >
+              <div className="relative h-[400px] md:h-[550px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
+                <Image
+                  src={images[currentImageIndex]}
+                  alt={`E-Commerce View ${currentImageIndex + 1}`}
+                  fill
+                  className="object-contain p-4 md:p-8"
+                  priority
+                  onLoadingComplete={(img) => {
+                    img.parentElement?.classList.remove('shimmer-dark');
+                  }}
+                />
+
+                {/* Navigation Arrows */}
+                <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
+                  <button
+                    onClick={prevImage}
+                    className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
+                  >
+                    <FiArrowLeft size={24} />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
+                  >
+                    <FiArrowRight size={24} />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Thumbnails */}
+            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide px-2">
+              {images.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all border-2 ${index === currentImageIndex
+                    ? 'border-blue-500 scale-105 shadow-[0_0_20px_rgba(59,130,246,0.5)]'
+                    : 'border-transparent opacity-40 hover:opacity-100'
+                    }`}
+                >
+                  <Image src={img} alt={`Thumb ${index + 1}`} fill className="object-cover" />
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-2xl font-bold mb-6 text-blue-400">Proje Özellikleri</h2>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500">•</span>
-                  Gelişmiş Ürün Yönetimi – Kategorilere göre filtreleme, arama ve sıralama özellikleri ile kolay ürün bulma imkanı.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500">•</span>
-                  Güvenli Ödeme Sistemi – Stripe entegrasyonu ile güvenli ve kolay ödeme işlemleri.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500">•</span>
-                  Admin Paneli – Ürün, kategori ve sipariş yönetimi için kullanıcı dostu yönetim arayüzü.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500">•</span>
-                  Performans Optimizasyonu – SEO dostu yapı ve hızlı sayfa yüklenme süreleri.
-                </li>
-              </ul>
-            </div>
-
+          {/* Project Info Section */}
+          <div className="lg:col-span-5 space-y-10">
             <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-6 text-blue-400">Teknolojiler</h2>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">React</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">JavaScript</span>
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full">TailwindCSS</span>
-                </div>
+              <div className="grid grid-cols-4 gap-3">
+                {[
+                  { icon: <FiShoppingCart />, title: 'Sepet' },
+                  { icon: <FiShoppingBag />, title: 'Ürün' },
+                  { icon: <FiTruck />, title: 'Sipariş' },
+                  { icon: <FiShield />, title: 'Güvenli' }
+                ].map((f, i) => (
+                  <div key={i} className="bg-white/5 p-3 rounded-xl border border-white/5 flex flex-col items-center text-center gap-2">
+                    <div className="text-xl text-blue-500">{f.icon}</div>
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter leading-none">{f.title}</span>
+                  </div>
+                ))}
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold mb-6 text-blue-400">Bağlantılar</h2>
-                <div className="flex flex-col gap-4">
-                  <a
-                    href="https://github.com/ahmetcaliskan63/e-commerce-side"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
-                  >
-                    <FiGithub size={20} />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-                  >
-                    <FiExternalLink size={20} />
-                    <span>Canlı Demo</span>
-                  </a>
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span className="w-6 h-1 bg-purple-500 rounded-full" />
+                  Teknolojiler
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['React', 'JavaScript', 'Tailwind CSS', 'Framer Motion'].map((t) => (
+                    <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
+                      {t}
+                    </span>
+                  ))}
                 </div>
+              </div>
+
+              <div className="pt-6 grid grid-cols-2 gap-4">
+                <a
+                  href="https://github.com/ahmetcaliskan63/e-commerce-side"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold"
+                >
+                  <FiGithub size={20} /> GitHub
+                </a>
+                <a
+                  href="https://github.com/ahmetcaliskan63/e-commerce-side"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all font-bold"
+                >
+                  <FiExternalLink size={20} /> Demo
+                </a>
               </div>
             </div>
           </div>
