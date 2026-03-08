@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -51,9 +52,16 @@ const Header = () => {
         <div className="container mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold bg-gradient-to-r from-electric via-cyber to-electric bg-[length:200%_auto] text-transparent bg-clip-text animate-gradient-x hover:scale-105 transition-transform duration-300"
+            className="hover:scale-105 transition-transform duration-300 flex items-center"
           >
-            Ahmet
+            <Image
+              src="/resimler/logo.png"
+              alt="Ahmet Çalışkan Logo"
+              width={40}
+              height={40}
+              className="w-auto h-8 md:h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
