@@ -15,19 +15,13 @@ export default function LabsisDetail() {
   const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="min-h-screen bg-space-950 text-white pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-      {/* Mesh Gradient Background */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/20 blur-[150px] rounded-full animate-pulse opacity-30" />
-      </div>
-
-      <div className="container mx-auto max-w-6xl">
+    <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl pt-10 pb-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-12"
+          className="mb-8"
         >
           <Link
             href="/projects"
@@ -42,12 +36,12 @@ export default function LabsisDetail() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-4xl mx-auto mb-16 space-y-6"
+          className="text-center max-w-4xl mx-auto mb-12 space-y-6"
         >
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight italic select-none uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
             LAB<span className="text-blue-500">SIS</span> LABORATUVAR SİSTEMİ
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
             Labsis, üniversite ortamındaki laboratuvar süreçlerini modernize etmek ve akademisyenler ile öğrenciler
             arasındaki bilimsel etkileşimi artırmak amacıyla geliştirilmiş bir yönetim sistemidir.
             Akademisyenlerin deney verilerini, ders notlarını ve laboratuvar rehberlerini güvenli bir şekilde paylaşmasına,
@@ -55,7 +49,7 @@ export default function LabsisDetail() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Visuals Section (Slider) */}
           <div className="lg:col-span-7 space-y-8">
             <motion.div
@@ -108,6 +102,7 @@ export default function LabsisDetail() {
                 </button>
               ))}
             </div>
+
           </div>
 
           {/* Project Info Section */}
