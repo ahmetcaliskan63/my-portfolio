@@ -115,10 +115,10 @@ export default function DershaneTakipDetail() {
                         <div className="space-y-8">
                             <div className="grid grid-cols-4 gap-3">
                                 {[
-                                    { icon: <FiAward />, title: 'Oyunlaştırma' },
-                                    { icon: <FiBarChart2 />, title: 'Veri Analizi' },
-                                    { icon: <FiUser />, title: 'Çoklu Rol' },
-                                    { icon: <FiSettings />, title: 'ERP Sistem' }
+                                    { icon: <FiAward />, title: 'Gamification' },
+                                    { icon: <FiBarChart2 />, title: 'Analytics' },
+                                    { icon: <FiUser />, title: 'RBAC' },
+                                    { icon: <FiSettings />, title: 'Enterprise' }
                                 ].map((f, i) => (
                                     <div key={i} className="bg-white/5 p-3 rounded-xl border border-white/5 flex flex-col items-center text-center gap-2">
                                         <div className="text-xl text-blue-500">{f.icon}</div>
@@ -133,7 +133,7 @@ export default function DershaneTakipDetail() {
                                     Teknolojiler
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Next.js 14', 'TypeScript', 'Tailwind', 'Chart.js', 'P5.js'].map((t) => (
+                                    {['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'Firestore', 'Chart.js'].map((t) => (
                                         <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
                                             {t}
                                         </span>
