@@ -17,78 +17,59 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative flex flex-col h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden hover:border-blue-400/30 transition-all duration-500 shadow-2xl"
+            className="group relative flex flex-col h-full bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden hover:bg-white/[0.04] transition-all duration-300 shadow-xl"
         >
             {/* Image Container */}
-            <div className="relative h-56 md:h-64 overflow-hidden shimmer-dark">
+            <div className="relative h-56 md:h-60 overflow-hidden">
                 <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     priority={index < 3}
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    onLoadingComplete={(img) => {
-                        img.parentElement?.classList.remove('shimmer-dark');
-                    }}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-space-950 via-space-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-
-                {/* Floating Tags */}
-                <div className="absolute top-4 right-4 flex flex-wrap justify-end gap-2 max-w-[70%]">
-                    {project.technologies.slice(0, 2).map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-[10px] uppercase tracking-wider font-bold text-blue-400">
-                            {tech}
-                        </span>
-                    ))}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-40" />
             </div>
 
             {/* Content */}
-            <div className="p-6 md:p-8 flex flex-col flex-1 relative z-10">
-                <div className="flex-1 space-y-4">
-                    <h3 className="text-xl md:text-2xl font-black text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight">
+            <div className="p-6 flex flex-col flex-1">
+                <div className="flex-1 space-y-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight">
                         {project.title}
                     </h3>
-                    <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3">
+                    <p className="text-sm text-gray-400 leading-relaxed line-clamp-3 font-light">
                         {project.description}
                     </p>
-
-                    {/* Detailed Tech Stack */}
-                    <div className="flex flex-wrap gap-2 pt-2">
-                        {project.technologies.map((tech) => (
-                            <span key={tech} className="text-[11px] text-gray-500 bg-white/5 px-2 py-1 rounded-md border border-white/5">
-                                #{tech}
-                            </span>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Actions */}
-                <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="mt-8 flex flex-col gap-3">
                     <Link
                         href={project.detailUrl}
-                        className="col-span-2 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2 group/btn"
+                        className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-semibold text-center transition-all flex items-center justify-center gap-2"
                     >
-                        Detayları Gör
-                        <FiExternalLink className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                        Proje Detayı
+                        <FiExternalLink size={14} />
                     </Link>
-                    <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-2.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white rounded-xl border border-white/10 text-sm font-semibold flex items-center justify-center gap-2 transition-all"
-                    >
-                        <FiGithub /> GitHub
-                    </a>
-                    <a
-                        href={project.liveUrl || project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-2.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white rounded-xl border border-white/10 text-sm font-semibold flex items-center justify-center gap-2 transition-all"
-                    >
-                        <FiExternalLink /> Demo
-                    </a>
+                    <div className="grid grid-cols-2 gap-3">
+                        <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-lg border border-white/5 text-xs font-medium flex items-center justify-center gap-2 transition-all"
+                        >
+                            <FiGithub size={14} /> Code
+                        </a>
+                        <a
+                            href={project.liveUrl || project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-lg border border-white/5 text-xs font-medium flex items-center justify-center gap-2 transition-all"
+                        >
+                            <FiExternalLink size={14} /> Demo
+                        </a>
+                    </div>
                 </div>
             </div>
         </motion.div>
