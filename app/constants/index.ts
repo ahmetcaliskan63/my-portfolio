@@ -229,7 +229,7 @@ export const projects: Project[] = [
         title: 'Dershane Takip Sistemi',
         description: 'Eğitim kurumları için modern, oyunlaştırılmış ve veri odaklı yönetim platformu. Aktivite ağacı, performans grafikleri ve rol bazlı yönetim sistemi ile eğitim süreçlerini dijitalleştirir.',
         image: '/resimler/dershaneTakip/1.png',
-        technologies: ['Next.js 14', 'TypeScript', 'Firebase', 'Firestore', 'Chart.js', 'Framer Motion'],
+        technologies: ['Next.js 14', 'TypeScript', 'Firebase', 'Firestore', '.NET 8', 'Framer Motion'],
         githubUrl: '#',
         liveUrl: '',
         detailUrl: '/projects/dershaneTakip'

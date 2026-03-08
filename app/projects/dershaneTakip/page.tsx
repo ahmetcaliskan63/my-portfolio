@@ -133,7 +133,7 @@ export default function DershaneTakipDetail() {
                                     Teknolojiler
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'Firestore', 'Chart.js'].map((t) => (
+                                    {['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'Firestore', '.NET 8'].map((t) => (
                                         <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
                                             {t}
                                         </span>
