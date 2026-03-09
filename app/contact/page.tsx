@@ -36,12 +36,12 @@ export default function Contact() {
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
-        setErrorMessage(data.error || 'Bir hata oluştu. Lütfen tekrar deneyin.');
+        setErrorMessage('E-posta gönderimi başarısız oldu. Lütfen tekrar deneyin.');
       }
     } catch (error) {
       console.error('Contact form error:', error);
       setStatus('error');
-      setErrorMessage('Sistem hatası. Lütfen internet bağlantınızı kontrol edin.');
+      setErrorMessage('E-posta gönderimi başarısız oldu. Lütfen tekrar deneyin.');
     }
   };
 
