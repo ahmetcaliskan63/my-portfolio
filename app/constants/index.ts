@@ -14,24 +14,40 @@ export interface Experience {
 
 export const skills = [
     {
-        category: 'Frontend 💻',
-        items: ['React.js', 'Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'SPA / PWA / Spabeyz'],
-        color: 'bg-electric/10'
+        category: 'Frontend',
+        items: ['React.js', 'Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        color: 'from-blue-500/20 to-cyan-500/20',
+        borderColor: 'group-hover:border-cyan-500/50'
     },
     {
-        category: 'Backend 🚀',
-        items: ['.NET Core / ASP.NET MVC', 'Node.js / Express.js', 'RESTful API', 'MySQL / MSSQL / PostgreSQL', 'MongoDB'],
-        color: 'bg-cyber/10'
+        category: 'Backend',
+        items: ['ASP.NET Core', 'RESTful API Development', 'Entity Framework', 'Node.js (Basic)'],
+        color: 'from-purple-500/20 to-blue-500/20',
+        borderColor: 'group-hover:border-purple-500/50'
     },
     {
-        category: 'Araçlar 🛠',
-        items: ['Git / GitHub', 'Docker', 'VS Code', 'Postman', 'Vercel / Firebase'],
-        color: 'bg-primary/10'
+        category: 'Database',
+        items: ['SQL Server', 'PostgreSQL', 'MongoDB', 'Firebase'],
+        color: 'from-emerald-500/20 to-teal-500/20',
+        borderColor: 'group-hover:border-emerald-500/50'
     },
     {
-        category: 'Diller 🌐',
-        items: ['Türkçe', 'İngilizce', 'Arapça'],
-        color: 'bg-cyan-400/10'
+        category: 'DevOps & Cloud',
+        items: ['Docker', 'CI/CD', 'Vercel Deployment', 'Cloud Deployment'],
+        color: 'from-orange-500/20 to-red-500/20',
+        borderColor: 'group-hover:border-orange-500/50'
+    },
+    {
+        category: 'Tools',
+        items: ['Git', 'GitHub', 'VS Code', 'Visual Studio', 'Postman', 'Figma'],
+        color: 'from-slate-500/20 to-gray-500/20',
+        borderColor: 'group-hover:border-slate-500/50'
+    },
+    {
+        category: 'Languages',
+        items: ['Turkish (Native)', 'English (B2)', 'Arabic (B1)'],
+        color: 'from-pink-500/20 to-rose-500/20',
+        borderColor: 'group-hover:border-pink-500/50'
     }
 ];
 
@@ -298,3 +314,12 @@ export const projects: Project[] = [
         detailUrl: '/projects/sksBasvuruSistemi'
     }
 ];
+
+export const personalInfo = {
+    phone: '05011776143',
+    email: 'ahmetcaliskan.dev@gmail.com',
+    socials: {
+        github: 'https://github.com/ahmetcaliskan63',
+        linkedin: 'https://www.linkedin.com/in/ahmetcalciskan/'
+    }
+};
