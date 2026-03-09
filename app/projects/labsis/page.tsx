@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiLayers, FiUser, FiDatabase, FiCpu } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiFileText, FiDatabase, FiLock, FiMonitor } from 'react-icons/fi';
 
 const images = Array.from({ length: 6 }, (_, i) => `/resimler/labsis/lab${i + 1}.png`);
 
@@ -16,6 +16,10 @@ export default function LabsisDetail() {
 
   return (
     <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
+        <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
+      </div>
+
       <div className="container mx-auto max-w-7xl pt-10 pb-10">
         {/* Back Button */}
         <motion.div
@@ -28,7 +32,7 @@ export default function LabsisDetail() {
             className="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-2xl border border-white/10 transition-all backdrop-blur-md"
           >
             <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-            <span className="font-bold uppercase tracking-widest text-xs md:text-sm">Projelere Dön</span>
+            <span className="font-bold uppercase tracking-widest text-xs md:text-sm text-white">Projelere Dön</span>
           </Link>
         </motion.div>
 
@@ -36,16 +40,15 @@ export default function LabsisDetail() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-4xl mx-auto mb-12 space-y-6"
+          className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
-            LAB<span className="text-blue-500">SIS</span> LABORATUVAR SİSTEMİ
+            LAB<span className="text-blue-500">SIS</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
-            Labsis, üniversite ortamındaki laboratuvar süreçlerini modernize etmek ve akademisyenler ile öğrenciler
-            arasındaki bilimsel etkileşimi artırmak amacıyla geliştirilmiş bir yönetim sistemidir.
-            Akademisyenlerin deney verilerini, ders notlarını ve laboratuvar rehberlerini güvenli bir şekilde paylaşmasına,
-            öğrencilerin ise bu içeriklere anlık olarak erişip ders süreçlerini takip etmesine olanak tanır.
+            Labsis, üniversite laboratuvarlarındaki ders yönetim süreçlerini dijitalleştiren kapsamlı bir akademik platformdur.
+            Akademisyenlerin deney içeriklerini paylaşabildiği, öğrencilerin ders materyallerine kolayca erişebildiği ve
+            laboratuvar envanterinin yönetilebildiği kurumsal bir çözüm sunar.
           </p>
         </motion.div>
 
@@ -57,16 +60,13 @@ export default function LabsisDetail() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative group"
             >
-              <div className="relative h-[400px] md:h-[550px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
+              <div className="relative h-[400px] md:h-[650px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
                 <Image
                   src={images[currentImageIndex]}
                   alt={`Labsis View ${currentImageIndex + 1}`}
                   fill
                   className="object-contain p-4 md:p-8"
                   priority
-                  onLoadingComplete={(img) => {
-                    img.parentElement?.classList.remove('shimmer-dark');
-                  }}
                 />
 
                 {/* Navigation Arrows */}
@@ -102,7 +102,6 @@ export default function LabsisDetail() {
                 </button>
               ))}
             </div>
-
           </div>
 
           {/* Project Info Section */}
@@ -110,10 +109,10 @@ export default function LabsisDetail() {
             <div className="space-y-8">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <FiLayers />, title: 'Deney Paylaşımı' },
-                  { icon: <FiDatabase />, title: 'Ders Materyalleri' },
-                  { icon: <FiCpu />, title: 'Laboratuvar Takibi' },
-                  { icon: <FiUser />, title: 'Akademik Yönetim' }
+                  { icon: <FiFileText />, title: 'Document Mgmt' },
+                  { icon: <FiDatabase />, title: 'Inventory' },
+                  { icon: <FiLock />, title: 'Secure Access' },
+                  { icon: <FiMonitor />, title: 'Dashboard' }
                 ].map((f, i) => (
                   <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-all group">
                     <div className="text-3xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
@@ -122,39 +121,52 @@ export default function LabsisDetail() {
                 ))}
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-6 h-1 bg-purple-500 rounded-full" />
-                  Teknolojiler
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {['CodeIgniter 4', 'PHP', 'MySQL', 'JavaScript', 'HTML/CSS'].map((t) => (
-                    <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
-                      {t}
-                    </span>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-6 h-1 bg-blue-500 rounded-full" />
+                    Teknolojiler
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['CodeIgniter 4', 'PHP', 'JavaScript', 'MySQL', 'Bootstrap', 'HTML/CSS'].map((t) => (
+                      <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               <div className="pt-6 grid grid-cols-2 gap-4">
                 <a
-                  href="https://github.com/yourusername/labsis"
+                  href="https://github.com/ahmetcaliskan63"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold"
+                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold text-sm md:text-base"
                 >
                   <FiGithub size={20} /> GitHub
                 </a>
-                <a
-                  href="https://github.com/yourusername/labsis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all font-bold"
-                >
-                  <FiExternalLink size={20} /> Demo
-                </a>
+                <div className="flex items-center justify-center gap-2 py-4 bg-blue-600/50 cursor-not-allowed text-white rounded-2xl shadow-lg transition-all font-bold text-sm md:text-base">
+                  <FiExternalLink size={20} /> Demo İsteyin
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Features Detail */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">🔬 Deney Yönetimi</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Laboratuvar dersleri için gerekli olan tüm deney adımlarının ve raporlama formatlarının dijital takibi.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">📦 Envanter Takibi</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Laboratuvarlarda bulunan cihazların ve sarf malzemelerin anlık stok durumlarının ve kullanım geçmişlerinin izlenmesi.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">🎓 Akademik Arşiv</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Geçmiş yıllardaki deney sonuçlarının ve öğrenci çalışmalarının güvenli bir şekilde saklandığı merkezi veri tabanı.</p>
           </div>
         </div>
       </div>
