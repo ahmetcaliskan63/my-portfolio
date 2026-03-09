@@ -312,6 +312,15 @@ export const projects: Project[] = [
         githubUrl: 'https://github.com/ahmetcaliskan63/sksBasvuruSistemi',
         liveUrl: '',
         detailUrl: '/projects/sksBasvuruSistemi'
+    },
+    {
+        title: 'GuessMeApp',
+        description: 'Yapay zeka (Gemini AI) destekli, interaktif bir sosyal oyun platformu. Arkadaşlarınızı ve ailenizi ne kadar tanıdığınızı test eden, dinamik soru üretimi ve premium tasarımıyla modern bir mobil oyun deneyimi sunar. .NET tabanlı RESTful API ve SignalR ile gerçek zamanlı çok oyunculu deneyim hedeflenmektedir.',
+        image: '/resimler/guessme/guess_me_app_mockup.png',
+        technologies: ['React Native', 'TypeScript', 'Gemini AI', '.NET 9', 'SignalR', 'SQL Server'],
+        githubUrl: 'https://github.com/ahmetcaliskan63/GuessMeApp',
+        liveUrl: '',
+        detailUrl: '/projects/guessme'
     }
 ];
 
