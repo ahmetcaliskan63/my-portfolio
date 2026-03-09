@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiClipboard, FiCheckSquare, FiPieChart, FiShield } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiUsers, FiClipboard, FiShield, FiCpu } from 'react-icons/fi';
 
 const images = Array.from({ length: 11 }, (_, i) => `/resimler/sksBasvuru/b${i + 1}.png`);
 
@@ -16,9 +16,8 @@ export default function SKSBasvuruDetail() {
 
   return (
     <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
-      {/* Refined Mesh Gradient Background */}
       <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
-        <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto max-w-7xl pt-10 pb-10">
@@ -41,16 +40,15 @@ export default function SKSBasvuruDetail() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-4xl mx-auto mb-12 space-y-6"
+          className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
             SKS <span className="text-blue-500">BAŞVURU SİSTEMİ</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
-            SKS Başvuru Sistemi, üniversite bünyesindeki Sağlık, Kültür ve Spor Daire Başkanlığı süreçlerini
-            tamamen dijital ortama taşıyan kurumsal bir platformdur. Öğrencilerin yemek bursu,
-            kısmi zamanlı çalışma ve kulüp faaliyetleri gibi başvurularını şeffaf bir şekilde yönetmelerine olanak tanır.
-            Kağıtsız ofis vizyonuyla bürokrasiyi azaltır ve başvuru süreçlerini hızlandırır.
+            SKS Başvuru Sistemi, Kırklareli Üniversitesi Sağlık, Kültür ve Spor Daire Başkanlığı için özel olarak geliştirilmiş kurumsal bir otomasyon çözümüdür.
+            Öğrencilerin kısmi zamanlı çalışma ve yemek bursu taleplerini dijital ortamda toplar, kriterlere göre otomatik puanlama yapar ve
+            değerlendirme sürecini şeffaf hale getirir.
           </p>
         </motion.div>
 
@@ -62,16 +60,13 @@ export default function SKSBasvuruDetail() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative group"
             >
-              <div className="relative h-[400px] md:h-[550px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
+              <div className="relative h-[400px] md:h-[650px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
                 <Image
                   src={images[currentImageIndex]}
                   alt={`SKS Başvuru View ${currentImageIndex + 1}`}
                   fill
                   className="object-contain p-4 md:p-8"
                   priority
-                  onLoadingComplete={(img) => {
-                    img.parentElement?.classList.remove('shimmer-dark');
-                  }}
                 />
 
                 {/* Navigation Arrows */}
@@ -107,7 +102,6 @@ export default function SKSBasvuruDetail() {
                 </button>
               ))}
             </div>
-
           </div>
 
           {/* Project Info Section */}
@@ -115,10 +109,10 @@ export default function SKSBasvuruDetail() {
             <div className="space-y-8">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <FiClipboard />, title: 'Dijital Başvuru' },
-                  { icon: <FiCheckSquare />, title: 'Onay Süreçleri' },
-                  { icon: <FiPieChart />, title: 'İstatistiki Veri' },
-                  { icon: <FiShield />, title: 'Veri Güvenliği' }
+                  { icon: <FiUsers />, title: 'User Portal' },
+                  { icon: <FiClipboard />, title: 'Automation' },
+                  { icon: <FiShield />, title: 'High Security' },
+                  { icon: <FiCpu />, title: 'Logic Engine' }
                 ].map((f, i) => (
                   <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-all group">
                     <div className="text-3xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
@@ -127,39 +121,52 @@ export default function SKSBasvuruDetail() {
                 ))}
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-6 h-1 bg-purple-500 rounded-full" />
-                  Teknolojiler
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {['PHP', 'CodeIgniter 4', 'MySQL', 'JavaScript', 'Bootstrap'].map((t) => (
-                    <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
-                      {t}
-                    </span>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-6 h-1 bg-blue-500 rounded-full" />
+                    Teknolojiler
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['PHP', 'CodeIgniter 4', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML/CSS'].map((t) => (
+                      <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               <div className="pt-6 grid grid-cols-2 gap-4">
                 <a
-                  href="https://github.com/ahmetcaliskan63/sksBasvuruSistemi"
+                  href="https://github.com/ahmetcaliskan63"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold"
+                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold text-sm md:text-base"
                 >
                   <FiGithub size={20} /> GitHub
                 </a>
-                <a
-                  href="https://github.com/ahmetcaliskan63/sksBasvuruSistemi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all font-bold"
-                >
-                  <FiExternalLink size={20} /> Demo
-                </a>
+                <div className="flex items-center justify-center gap-2 py-4 bg-blue-600/50 cursor-not-allowed text-white rounded-2xl shadow-lg transition-all font-bold text-sm md:text-base">
+                  <FiExternalLink size={20} /> Preview
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Features Detail */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">⚖️ Akıllı Puanlama</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Başvuru kriterlerine göre (gelir durumu, başarı sırası vb.) sistem tarafından otomatik hesaplanan adil puanlama algoritması.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">📊 Yönetim Paneli</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Daire başkanlığı yetkilileri için binlerce başvuruyu tek tıkla Excel formatına dökme ve sonuçları ilan etme modülü.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">🔒 Güvenli Başvuru</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Kullanıcı verilerinin ve başvuru dokümanlarının şifrelenmiş bir şekilde saklandığı, sadece yetkili erişimine açık sistem.</p>
           </div>
         </div>
       </div>
