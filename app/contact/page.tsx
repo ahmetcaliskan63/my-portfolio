@@ -14,10 +14,12 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMessage('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -26,16 +28,20 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
+        setErrorMessage(data.error || 'Bir hata oluştu. Lütfen tekrar deneyin.');
       }
     } catch (error) {
       console.error('Contact form error:', error);
       setStatus('error');
+      setErrorMessage('Sistem hatası. Lütfen internet bağlantınızı kontrol edin.');
     }
   };
 
@@ -232,12 +238,23 @@ export default function Contact() {
                           <><FiLoader className="animate-spin text-lg" /> Gönderiliyor</>
                         ) : status === 'success' ? (
                           <><FiCheckCircle className="text-lg" /> Mesaj Gönderildi</>
+                        ) : status === 'error' ? (
+                          <><FiAlertCircle className="text-lg text-red-400" /> Hata Oluştu</>
                         ) : (
                           <>Mesajı Gönder <FiSend className="text-lg group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" /></>
                         )}
                       </span>
                       <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </button>
+                    {status === 'error' && errorMessage && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-[10px] text-red-400 font-medium text-center mt-3 bg-red-400/10 py-2 rounded-lg border border-red-400/20"
+                      >
+                        {errorMessage}
+                      </motion.p>
+                    )}
                   </form>
                 </div>
               </div>
