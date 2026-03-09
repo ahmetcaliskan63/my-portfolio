@@ -126,17 +126,19 @@ export default function DershaneTakipDetail() {
                                 ))}
                             </div>
 
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                                    <span className="w-6 h-1 bg-purple-500 rounded-full" />
-                                    Teknolojiler
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'Firestore', '.NET 8'].map((t) => (
-                                        <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
-                                            {t}
-                                        </span>
-                                    ))}
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                        <span className="w-6 h-1 bg-blue-500 rounded-full" />
+                                        Teknolojiler
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'Firestore', '.NET 8'].map((t) => (
+                                            <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 
@@ -149,16 +151,27 @@ export default function DershaneTakipDetail() {
                                 >
                                     <FiGithub size={20} /> GitHub
                                 </a>
-                                <a
-                                    href="https://github.com/ahmetcaliskan63"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all font-bold text-sm md:text-base"
-                                >
-                                    <FiExternalLink size={20} /> Demo
-                                </a>
+                                <div className="flex items-center justify-center gap-2 py-4 bg-blue-600/50 cursor-not-allowed text-white rounded-2xl shadow-lg transition-all font-bold text-sm md:text-base">
+                                    <FiExternalLink size={20} /> Demo Yakında
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Features Detail - NEW Feature Cards */}
+                <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+                        <h4 className="text-xl font-bold text-white uppercase tracking-tight">🌳 Aktivite Ağacı</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">Öğrencilerin çözdüğü test ve katıldığı aktivitelerle büyüyen dijital ağaç sistemi ile motivasyon en üst düzeye çıkarılır.</p>
+                    </div>
+                    <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+                        <h4 className="text-xl font-bold text-white uppercase tracking-tight">📊 Performans Analizi</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">Öğretmen ve veliler için detaylı başarı grafikleri ve eksik konu raporları sunan gelişmiş veri görselleştirme.</p>
+                    </div>
+                    <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+                        <h4 className="text-xl font-bold text-white uppercase tracking-tight">🏢 Rol Bazlı Yönetim</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">Admin, Öğretmen, Öğrenci ve Veli rolleri ile her kullanıcıya özel kısıtlanmış ve güvenli erişim panelleri.</p>
                     </div>
                 </div>
             </div>
