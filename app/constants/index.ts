@@ -242,6 +242,15 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: 'GuessMeApp',
+        description: 'Yapay zeka (Gemini AI) destekli, interaktif bir sosyal oyun platformu. Arkadaşlarınızı ve ailenizi ne kadar tanıdığınızı test eden, dinamik soru üretimi ve premium tasarımıyla modern bir mobil oyun deneyimi sunar. .NET tabanlı RESTful API ve SignalR ile gerçek zamanlı çok oyunculu deneyim hedeflenmektedir.',
+        image: '/resimler/GuesMe/1.png',
+        technologies: ['React Native', 'TypeScript', 'Gemini AI', '.NET 9', 'SignalR', 'SQL Server'],
+        githubUrl: 'https://github.com/ahmetcaliskan63/GuessMeApp',
+        liveUrl: '',
+        detailUrl: '/projects/guessme'
+    },
+    {
         title: 'Dershane Takip Sistemi',
         description: 'Eğitim kurumları için modern, oyunlaştırılmış ve veri odaklı yönetim platformu. Aktivite ağacı, performans grafikleri ve rol bazlı yönetim sistemi ile eğitim süreçlerini dijitalleştirir.',
         image: '/resimler/dershaneTakip/1.png',
@@ -313,15 +322,6 @@ export const projects: Project[] = [
         liveUrl: '',
         detailUrl: '/projects/sksBasvuruSistemi'
     },
-    {
-        title: 'GuessMeApp',
-        description: 'Yapay zeka (Gemini AI) destekli, interaktif bir sosyal oyun platformu. Arkadaşlarınızı ve ailenizi ne kadar tanıdığınızı test eden, dinamik soru üretimi ve premium tasarımıyla modern bir mobil oyun deneyimi sunar. .NET tabanlı RESTful API ve SignalR ile gerçek zamanlı çok oyunculu deneyim hedeflenmektedir.',
-        image: '/resimler/guessme/guess_me_app_mockup.png',
-        technologies: ['React Native', 'TypeScript', 'Gemini AI', '.NET 9', 'SignalR', 'SQL Server'],
-        githubUrl: 'https://github.com/ahmetcaliskan63/GuessMeApp',
-        liveUrl: '',
-        detailUrl: '/projects/guessme'
-    }
 ];
 
 export const personalInfo = {
