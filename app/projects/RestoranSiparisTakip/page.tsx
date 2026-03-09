@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiCoffee, FiClipboard, FiPieChart, FiMonitor } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiGithub, FiExternalLink, FiCoffee, FiList, FiTrendingUp, FiSettings } from 'react-icons/fi';
 
-const images = ['/resimler/Rsts/rsts1.png', '/resimler/Rsts/rsts2.png'];
+const images = Array.from({ length: 2 }, (_, i) => `/resimler/Rsts/rsts${i + 1}.png`);
 
-export default function RestoranTakipDetail() {
+export default function RestoranSiparisDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -16,7 +16,6 @@ export default function RestoranTakipDetail() {
 
   return (
     <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
-      {/* Refined Mesh Gradient Background */}
       <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
         <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
       </div>
@@ -41,16 +40,15 @@ export default function RestoranTakipDetail() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-4xl mx-auto mb-12 space-y-6"
+          className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
-            RESTORAN <span className="text-blue-500">SİPARİŞ</span> SİSTEMİ
+            RESTORAN <span className="text-blue-500">SİPARİŞ TAKİP</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
-            Restoran Sipariş Sistemi, modern işletmelerin operasyonel ihtiyaçlarını karşılamak üzere tasarlanmış
-            uçtan uca bir yönetim çözümüdür. Masa rezervasyonlarından mutfak koordinasyonuna, anlık sipariş takibinden
-            detaylı finansal raporlamaya kadar tüm süreçleri tek bir dijital merkezde birleştirir.
-            İşletme verimliliğini artırırken müşteri deneyimini en üst seviyeye taşımayı hedefler.
+            Restoran işletmeleri için özel olarak geliştirilen bu sistem, masaların durumu, siparişlerin anlık takibi ve
+            mutfak yönetimi süreçlerini dijitalleştirir. ASP.NET Core ve PostgreSQL altyapısı ile yüksek performans ve
+            güvenli veri yönetimi sunan kapsamlı bir otomasyon çözümüdür.
           </p>
         </motion.div>
 
@@ -62,52 +60,52 @@ export default function RestoranTakipDetail() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative group"
             >
-              <div className="relative h-[400px] md:h-[550px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
+              <div className="relative h-[400px] md:h-[650px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
                 <Image
                   src={images[currentImageIndex]}
-                  alt={`Restoran Takip View ${currentImageIndex + 1}`}
+                  alt={`RSTS View ${currentImageIndex + 1}`}
                   fill
                   className="object-contain p-4 md:p-8"
                   priority
-                  onLoadingComplete={(img) => {
-                    img.parentElement?.classList.remove('shimmer-dark');
-                  }}
                 />
 
                 {/* Navigation Arrows */}
-                <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
-                  <button
-                    onClick={prevImage}
-                    className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
-                  >
-                    <FiArrowLeft size={24} />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
-                  >
-                    <FiArrowRight size={24} />
-                  </button>
-                </div>
+                {images.length > 1 && (
+                  <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
+                    <button
+                      onClick={prevImage}
+                      className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
+                    >
+                      <FiArrowLeft size={24} />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="p-4 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md border border-white/10 transition-all pointer-events-auto active:scale-95"
+                    >
+                      <FiArrowRight size={24} />
+                    </button>
+                  </div>
+                )}
               </div>
             </motion.div>
 
             {/* Thumbnails */}
-            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide px-2">
-              {images.map((img, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all border-2 ${index === currentImageIndex
-                    ? 'border-blue-500 scale-105 shadow-[0_0_20px_rgba(59,130,246,0.5)]'
-                    : 'border-transparent opacity-40 hover:opacity-100'
-                    }`}
-                >
-                  <Image src={img} alt={`Thumb ${index + 1}`} fill className="object-cover" />
-                </button>
-              ))}
-            </div>
-
+            {images.length > 1 && (
+              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide px-2">
+                {images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all border-2 ${index === currentImageIndex
+                      ? 'border-blue-500 scale-105 shadow-[0_0_20px_rgba(59,130,246,0.5)]'
+                      : 'border-transparent opacity-40 hover:opacity-100'
+                      }`}
+                  >
+                    <Image src={img} alt={`Thumb ${index + 1}`} fill className="object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Project Info Section */}
@@ -115,10 +113,10 @@ export default function RestoranTakipDetail() {
             <div className="space-y-8">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <FiCoffee />, title: 'Masa Yönetimi' },
-                  { icon: <FiClipboard />, title: 'Hızlı Sipariş' },
-                  { icon: <FiPieChart />, title: 'Mutfak Paneli' },
-                  { icon: <FiMonitor />, title: 'Canlı Takip' }
+                  { icon: <FiCoffee />, title: 'Table Mgmt' },
+                  { icon: <FiList />, title: 'Order Flow' },
+                  { icon: <FiTrendingUp />, title: 'Analytics' },
+                  { icon: <FiSettings />, title: 'Dashboard' }
                 ].map((f, i) => (
                   <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-all group">
                     <div className="text-3xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
@@ -127,17 +125,19 @@ export default function RestoranTakipDetail() {
                 ))}
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-6 h-1 bg-purple-500 rounded-full" />
-                  Teknolojiler
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {['ASP.NET Core', 'MVC', 'PostgreSQL', 'JavaScript', 'Tailwind CSS'].map((t) => (
-                    <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
-                      {t}
-                    </span>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-6 h-1 bg-blue-500 rounded-full" />
+                    Teknolojiler
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['ASP.NET Core', 'MVC', 'PostgreSQL', 'Entity Framework', 'JavaScript', 'HTML/CSS'].map((t) => (
+                      <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-gray-400">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -146,20 +146,31 @@ export default function RestoranTakipDetail() {
                   href="https://github.com/ahmetcaliskan63/RestoranSiparisTakip"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold"
+                  className="flex items-center justify-center gap-2 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 transition-all font-bold text-sm md:text-base"
                 >
                   <FiGithub size={20} /> GitHub
                 </a>
-                <a
-                  href="https://github.com/ahmetcaliskan63/RestoranSiparisTakip"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-lg hover:shadow-blue-500/25 transition-all font-bold"
-                >
-                  <FiExternalLink size={20} /> Demo
-                </a>
+                <div className="flex items-center justify-center gap-2 py-4 bg-blue-600/50 cursor-not-allowed text-white rounded-2xl shadow-lg transition-all font-bold text-sm md:text-base">
+                  <FiExternalLink size={20} /> Demo Yakında
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Features Detail */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">🍽️ Masa Yönetimi</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Masa doluluk oranlarını, bekleyen siparişleri ve servis sürelerini anlık harita üzerinden izleme kolaylığı.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">👨‍🍳 Mutfak Paneli</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Gelen siparişlerin mutfak personeline anında iletildiği ve hazırlık süreçlerinin takip edildiği interaktif ekranlar.</p>
+          </div>
+          <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 space-y-4">
+            <h4 className="text-xl font-bold text-white uppercase tracking-tight">📈 Satış Raporları</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">Günlük, haftalık ve aylık bazda ciro analizi ve en çok tercih edilen ürünlerin istatistiksel raporlanması.</p>
           </div>
         </div>
       </div>
