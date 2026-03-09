@@ -14,10 +14,12 @@ export default function About() {
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
   const skillIcons: { [key: string]: React.ReactNode } = {
-    'Frontend 💻': <FaCode className="text-electric" />,
-    'Backend 🚀': <FaRocket className="text-cyber" />,
-    'Araçlar 🛠': <FaTools className="text-primary" />,
-    'Diller 🌐': <FaLanguage className="text-cyan-400" />
+    'Frontend': <FaCode className="text-blue-400" />,
+    'Backend': <FaRocket className="text-purple-400" />,
+    'Database': <FaTools className="text-emerald-400" />,
+    'DevOps & Cloud': <FaBriefcase className="text-orange-400" />,
+    'Tools': <FaLightbulb className="text-slate-400" />,
+    'Languages': <FaLanguage className="text-pink-400" />
   };
 
   const openGallery = (images: string[], index: number = 0) => {
@@ -325,8 +327,7 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* Yetenekler Bölümü */}
-          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {skills.map((skill, index) => (
               <SkillCard
                 key={index}

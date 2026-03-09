@@ -34,8 +34,8 @@ const Header = () => {
 
 
   const navItems = [
-    { name: 'Projeler', path: '/projects' },
     { name: 'Hakkımda', path: '/about' },
+    { name: 'Projeler', path: '/projects' },
     { name: 'İletişim', path: '/contact' },
   ];
 
