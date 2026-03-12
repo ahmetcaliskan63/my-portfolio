@@ -15,7 +15,7 @@ export default function KykYemekDetail() {
   const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="min-h-screen bg-space-950 text-white pt-20 pb-10 px-4 md:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-space-950 text-white pt-16 pb-8 px-4 md:px-8 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden -z-10 bg-[#020617]">
         <div className="absolute top-0 right-0 w-full h-full bg-blue-600/5 blur-[120px] rounded-full" />
       </div>
@@ -42,16 +42,16 @@ export default function KykYemekDetail() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight uppercase">
+          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight uppercase">
             KYK YEMEK <span className="text-blue-500">MENÜSÜ</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light text-justify max-w-3xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light text-justify max-w-2xl mx-auto">
             KYK Yemek Menüsü, Kırklareli'ndeki üniversite öğrencilerinin yurt yemek menülerine kolayca erişebilmesini sağlamak amacıyla geliştirilmiş minimalist bir web uygulamasıdır.
             Kullanıcılar günlük ve geçmiş menüleri anlık olarak görüntüleyebilir, Firebase entegrasyonu sayesinde verimli ve hızlı bir deneyim yaşarlar.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Visuals Section (Slider) */}
           <div className="lg:col-span-7 space-y-8">
             <motion.div
@@ -59,7 +59,7 @@ export default function KykYemekDetail() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative group"
             >
-              <div className="relative h-[400px] md:h-[650px] w-full bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
+              <div className="relative h-[350px] md:h-[500px] w-full bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl backdrop-blur-sm shimmer-dark">
                 <Image
                   src={images[currentImageIndex]}
                   alt={`KYK Yemek View ${currentImageIndex + 1}`}
@@ -117,9 +117,9 @@ export default function KykYemekDetail() {
                   { icon: <FiSmartphone />, title: 'Mobile First' },
                   { icon: <FiPieChart />, title: 'Statistics' }
                 ].map((f, i) => (
-                  <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-all group">
-                    <div className="text-3xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{f.title}</span>
+                  <div key={i} className="bg-white/5 p-5 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-3 hover:bg-white/10 transition-all group">
+                    <div className="text-2xl text-blue-500 group-hover:scale-110 transition-transform">{f.icon}</div>
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{f.title}</span>
                   </div>
                 ))}
               </div>
